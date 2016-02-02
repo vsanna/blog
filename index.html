@@ -45,6 +45,7 @@
           <h1 class="title">Project Name</h1>
           <p class="desc">programming...mmm...</p>
         </div>
+        <!-- <span class="point"></span> -->
       </div>
       <!-- not-mobile -->
       <!-- mobile -->
@@ -299,6 +300,22 @@
       } else {
         $('.mdl-layout__header-row').stop().animate({'top':0}, 300)
       }
+    })
+
+
+    // cssのanimationの開始と終了がとれる。
+    var point = $('.point')
+    point.on('webkitAnimationEnd AnimationEnd',function(){
+      point.removeClass('is_show')
+    })
+
+    $('.bigbox').on('mousemove',function(e){
+      point
+        .css({
+          "top": e.clientY,
+          "left": e.clientX,
+        })
+        .addClass('is_show')
     })
 
   })()

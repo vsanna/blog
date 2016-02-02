@@ -27,6 +27,19 @@ $width-mobile: "(max-width: 479px)";
   .show-not-mobile{ display: inherit !important; }
 }
 
+
+// animation
+// @keyframes ripple{
+//   from {
+//     opacity:1;
+//   }
+//   to {
+//     transform: scale(2);
+//     opacity:0;
+//   }
+// }
+
+
 // layout
 
 .content-center {
@@ -160,6 +173,7 @@ header.mdl-layout__header.custom {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
 
   display: flex;
   justify-content: center; // 子要素のヨコ揃え
@@ -239,6 +253,30 @@ header.mdl-layout__header.custom {
             position: absolute;
             top: 63%;
             left: 0;
+        }
+
+        &.show {
+          width: 80%;
+          height: inherit;
+          .tags {
+            margin: 10px 0 0;
+            padding: 0;
+            display: flex;
+          }
+          .title {
+              font-size: 20px;
+              margin: 0;
+              font-family: serif;
+              position: inherit;
+              &:after {
+                  border-top: 1px solid #555;
+                  border-bottom: 1px solid #555;
+                  display: block;
+                  content: "";
+                  height: 2px;
+                  margin-top: 4px;
+              }
+          }
         }
     }
 }
@@ -353,3 +391,13 @@ header.mdl-layout__header.custom {
         }
     }
 }
+//
+// .point {
+//   opacity: 0;
+//   position: absolute;;
+//   border: 10px solid rgba(200,200,200,0.5);
+//   border-radius: 50%;
+//   &.is_show {
+//     animation: ripple 0.2s;
+//   }
+// }

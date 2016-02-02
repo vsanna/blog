@@ -11,6 +11,33 @@
 </head>
 <body>
 
+  <style>
+  .mdl-card__body {
+    padding: 20px 5%;
+    font-size: 1rem;
+}
+
+.mdl-card.mdl-shadow--2dp.article {
+    width: 100%;
+    margin-top: 19px;
+}
+
+.article .mdl-card__body h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid;
+    line-height: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.article .mdl-card__body h3 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgba(130,130,130,0.7);
+}
+</style>
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header custom">
     <!-- Top row, always visible -->
@@ -42,108 +69,44 @@
       <div class="bigbox hide-mobile mdl-shadow--3dp">
         <div class="overall"></div>
         <div class="bigbox-inner">
-          <h1 class="title">Project Name</h1>
+          <h1 class="title">Railsで高速にransackを動かす方法と最近の雑感を簡単にまとめたもの</h1>
           <p class="desc">programming...mmm...</p>
         </div>
       </div>
       <!-- not-mobile -->
       <!-- mobile -->
       <div class="bigbox-mobile hide-not-mobile  mdl-shadow--3dp">
-        <img src="./images/face.jpg" alt="" class="icon">
-        <div class="bigbox-mobile--inner">
-          <h1 class="title">Project Name</h1>
-          <span class="desc">programming...mmm...</span>
+        <div class="bigbox-mobile--inner show">
+          <h1 class="title">Railsで高速にransackを動かす方法と最近の雑感を簡単にまとめたもの</h1>
+          <ul class="tags">
+            <li class="tag tag--sm">Rails</li>
+            <li class="tag tag--sm">Rails</li>
+            <li class="tag tag--sm">Rails</li>
+            <li class="tag tag--sm">Rails</li>
+          </ul>
         </div>
       </div>
       <!-- mobile -->
     <!-- first view -->
     <!-- content -->
     <div class="content-center">
-        <div class="mdl-grid cards">
-          <div class="card-wrapper mdl-cell--12-col">
-            <div class="card mdl-card mdl-shadow--4dp top">
-              <div class="mdl-card__media">
-                <h2 class="title">titletitletitletitle</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Auckland Sky Tower, taken March 24th, 2014
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="card mdl-card mdl-shadow--4dp">
-              <div class="mdl-card__media">
-                <h2 class="title">titletitletitletitle</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="written_at"> written by March 24th, 2014</span>
-                <span class="sns-counts">
-                  <span class="sns-count hatebu">B</span>
-                  <span class="sns-count facebook">f</span>
-                  <span class="sns-count pocket">P</span>
-                </span>
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="card mdl-card mdl-shadow--4dp">
-              <div class="mdl-card__media">
-                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                 March 24th, 2014
-              </div>
-              <div class="mdl-card__supporting-text">
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="card mdl-card mdl-shadow--4dp">
-              <div class="mdl-card__media">
-                <h2 class="title">Railsでrelationを使いつつ</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Auckland Sky Tower, taken March 24th, 2014
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="card mdl-card mdl-shadow--4dp">
-              <div class="mdl-card__media">
-                <h2 class="title">titletitletitletitle</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Auckland Sky Tower, taken March 24th, 2014
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
+      <div class="mdl-card mdl-shadow--2dp article">
+        <div class="mdl-card__body">
+          <h2>asdf</h2>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <h3>asdf</h3>
+          <h4>asdf</h4>
+          <p>hogehoge</p>
         </div>
+        <div class="mdl-card__footer mdl-card--border"></div>
+      </div>
     </div>
+    <!-- content -->
   </main>
 </div>
 

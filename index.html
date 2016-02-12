@@ -16,7 +16,7 @@
     <!-- Top row, always visible -->
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><a href="/">Project Name</a></span>
+      <span class="mdl-layout-title left_align"><a href="/">Project Name</a></span>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation hide-mobile">
@@ -24,17 +24,132 @@
         <a class="mdl-navigation__link" href="">About</a>
         <a class="mdl-navigation__link" href="">Contact</a>
         <a class="mdl-navigation__link" href="">Github</a>
+        <a class="mdl-navigation__link js-toggle-menu-container-bottom" href="#">☓</a>
       </nav>
     </div>
   </header>
+  <div class="menu-container-bottom hide-mobile">
+    <div class="mdl-grid content-center">
+      <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+              <a href="#starks-panel" class="mdl-tabs__tab is-active">Category</a>
+              <a href="#lannisters-panel" class="mdl-tabs__tab">Archives</a>
+              <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
+          </div>
+          <div class="mdl-tabs__panel is-active" id="starks-panel">
+            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
+            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
+            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
+          </div>
+          <div class="mdl-tabs__panel" id="lannisters-panel">
+            <ul class="demo-list-icon mdl-list">
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Bryan Cranston
+            </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Aaron Paul
+              </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Bob Odenkirk
+              </span>
+              </li>
+            </ul>
+          </div>
+          <div class="mdl-tabs__panel" id="targaryens-panel">
+            <ul class="demo-list-icon mdl-list">
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Bryan Cranston
+            </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Aaron Paul
+              </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                Bob Odenkirk
+              </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-cell--4-col mdl-cell--8-col-tablet menu-container-bottom--right">
+        <dev class="search">
+          <form action="#">
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Text...</label>
+              <label class="mdl-button mdl-js-button mdl-button--icon search-icon" for="search" data-upgraded=",MaterialButton">
+                <i class="material-icons">search</i>
+              </label>
+            </div>
+          </form>
+        </dev>
+      </div>
+    </div>
+  </div>
+
   <div class="mdl-layout__drawer hide-not-mobile">
-    <span class="mdl-layout-title">Title</span>
+    <span class="mdl-layout-title">Project Name</span>
+    <div class="content-center-mobile">
+      <dev class="search">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield is-upgraded" data-upgraded=",MaterialTextfield">
+            <input class="mdl-textfield__input" type="text" id="search_drawer">
+            <label class="mdl-textfield__label" for="search_drawer">Text...</label>
+            <label class="mdl-button mdl-js-button mdl-button--icon search-icon" for="search_drawer" data-upgraded=",MaterialButton">
+              <i class="material-icons">search</i>
+            </label>
+          </div>
+        </form>
+      </dev>
+    </div>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Top</a>
       <a class="mdl-navigation__link" href="">About</a>
       <a class="mdl-navigation__link" href="">Contact</a>
       <a class="mdl-navigation__link" href="">Github</a>
     </nav>
+    <div class="with-image mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+      <div class="mdl-tabs__tab-bar">
+          <a href="#drawer_category" class="mdl-tabs__tab is-active">Category</a>
+          <a href="#drawer_archives" class="mdl-tabs__tab">Archives</a>
+          <a href="#drawer_others" class="mdl-tabs__tab">Targaryens</a>
+      </div>
+      <div class="mdl-tabs__panel mdl-navigation is-active" id="drawer_category">
+        <a class="mdl-navigation__link" href="">Top</a>
+        <a class="mdl-navigation__link" href="">About</a>
+        <a class="mdl-navigation__link" href="">Contact</a>
+        <a class="mdl-navigation__link" href="">Github</a>
+      </div>
+      <div class="mdl-tabs__panel mdl-navigation" id="drawer_archives">
+        <a class="mdl-navigation__link" href="">Top</a>
+        <a class="mdl-navigation__link" href="">About</a>
+        <a class="mdl-navigation__link" href="">Contact</a>
+        <a class="mdl-navigation__link" href="">Github</a>
+      </div>
+      <div class="mdl-tabs__panel mdl-navigation" id="drawer_others">
+        <a class="mdl-navigation__link" href="">Top</a>
+        <a class="mdl-navigation__link" href="">About</a>
+        <a class="mdl-navigation__link" href="">Contact</a>
+        <a class="mdl-navigation__link" href="">Github</a>
+      </div>
+    </div>
   </div>
   <main class="mdl-layout__content">
     <!-- first view -->
@@ -88,6 +203,8 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="mdl-grid cards">
           <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="card mdl-card mdl-shadow--4dp">
               <div class="mdl-card__media">
@@ -115,38 +232,10 @@
               </div>
             </div>
           </div>
-          <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="card mdl-card mdl-shadow--4dp">
               <div class="mdl-card__media">
                 <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
-              </div>
-
-              <div class="mdl-card__supporting-text">
-                <span class="mini_meta">
-                  <i class="material-icons">create</i>2016/02/01
-                  <span class="sns-counts">
-                    <span class="sns-count hatebu">B</span>
-                    <span class="sns-count facebook">f</span>
-                    <span class="sns-count pocket">P</span>
-                  </span>
-                </span>
-                <span class="tags">
-                  <span class="tag tag--sm">Rails</span>
-                  <span class="tag tag--sm">初心者</span>
-                  <span class="tag tag--sm">覚書</span>
-                </span>
-              </div>
-              <div class="mdl-card__supporting-text">
-              The Sky Tower is an observation and telecommunications tower located in Auckland,
-              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-              in the Southern Hemisphere.
-              </div>
-            </div>
-          </div>
-          <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="card mdl-card mdl-shadow--4dp">
-              <div class="mdl-card__media">
-                <h2 class="title">Railsでrelationを使いつつ</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <span class="mini_meta">
@@ -173,7 +262,88 @@
           <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="card mdl-card mdl-shadow--4dp">
               <div class="mdl-card__media">
-                <h2 class="title">titletitletitletitle</h2>
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mini_meta">
+                  <i class="material-icons">create</i>2016/02/01
+                  <span class="sns-counts">
+                    <span class="sns-count hatebu">B</span>
+                    <span class="sns-count facebook">f</span>
+                    <span class="sns-count pocket">P</span>
+                  </span>
+                </span>
+                <span class="tags">
+                  <span class="tag tag--sm">Rails</span>
+                  <span class="tag tag--sm">初心者</span>
+                  <span class="tag tag--sm">覚書</span>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text">
+              The Sky Tower is an observation and telecommunications tower located in Auckland,
+              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+              in the Southern Hemisphere.
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="card mdl-card mdl-shadow--4dp">
+              <div class="mdl-card__media">
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mini_meta">
+                  <i class="material-icons">create</i>2016/02/01
+                  <span class="sns-counts">
+                    <span class="sns-count hatebu">B</span>
+                    <span class="sns-count facebook">f</span>
+                    <span class="sns-count pocket">P</span>
+                  </span>
+                </span>
+                <span class="tags">
+                  <span class="tag tag--sm">Rails</span>
+                  <span class="tag tag--sm">初心者</span>
+                  <span class="tag tag--sm">覚書</span>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text">
+              The Sky Tower is an observation and telecommunications tower located in Auckland,
+              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+              in the Southern Hemisphere.
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="card mdl-card mdl-shadow--4dp">
+              <div class="mdl-card__media">
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mini_meta">
+                  <i class="material-icons">create</i>2016/02/01
+                  <span class="sns-counts">
+                    <span class="sns-count hatebu">B</span>
+                    <span class="sns-count facebook">f</span>
+                    <span class="sns-count pocket">P</span>
+                  </span>
+                </span>
+                <span class="tags">
+                  <span class="tag tag--sm">Rails</span>
+                  <span class="tag tag--sm">初心者</span>
+                  <span class="tag tag--sm">覚書</span>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text">
+              The Sky Tower is an observation and telecommunications tower located in Auckland,
+              New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+              in the Southern Hemisphere.
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="card mdl-card mdl-shadow--4dp">
+              <div class="mdl-card__media">
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <span class="mini_meta">
@@ -198,57 +368,30 @@
             </div>
           </div>
         </div>
-    </div>
-    <footer class="mdl-mega-footer">
-      <div class="mdl-mega-footer__middle-section">
-
-        <div class="mdl-mega-footer__drop-down-section">
-          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-          <h1 class="mdl-mega-footer__heading">タグ</h1>
-          <ul class="mdl-mega-footer__link-list">
-            <li class="tag tag--sm tag--transparent-white"><a href="#">About</a></li>
-            <li class="tag tag--sm tag--transparent-white"><a href="#">Terms</a></li>
-            <li class="tag tag--sm tag--transparent-white"><a href="#">Partners</a></li>
-            <li class="tag tag--sm tag--transparent-white"><a href="#">Partners</a></li>
-          </ul>
-        </div>
-
-        <div class="mdl-mega-footer__drop-down-section">
-          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-          <h1 class="mdl-mega-footer__heading">カテゴリ</h1>
-          <ul class="mdl-mega-footer__link-list">
-            <li><a href="#">カテゴリ1</a></li>
-            <li><a href="#">カテゴリ1</a></li>
-            <li><a href="#">カテゴリ1</a></li>
-          </ul>
-        </div>
-
-        <div class="mdl-mega-footer__drop-down-section">
-          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-          <h1 class="mdl-mega-footer__heading">アーカイブ</h1>
-          <ul class="mdl-mega-footer__link-list">
-            <li><a href="#">2016年 1月</a></li>
-            <li><a href="#">2016年 1月</a></li>
-            <li><a href="#">2016年 1月</a></li>
-            <li><a href="#">2016年 1月</a></li>
-            <li><a href="#">2016年 1月</a></li>
-          </ul>
-        </div>
-
-        <div class="mdl-mega-footer__drop-down-section">
-          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-          <h1 class="mdl-mega-footer__heading">Twitter</h1>
-        </div>
-
+      <div class="pager-items">
+        <div class="page-item"><</div>
+        <div class="page-item">1</div>
+        <div class="page-item">2</div>
+        <div class="page-item">3</div>
+        <div class="page-item">...</div>
+        <div class="page-item">21</div>
+        <div class="page-item">></div>
       </div>
-
-      <div class="mdl-mega-footer__bottom-section">
+    </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
         <div class="mdl-logo">Project Name</div>
-        <ul class="mdl-mega-footer__link-list">
+        <ul class="mdl-mini-footer__link-list">
           <li><a href="#">Top</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Github</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mini-footer__right-section">
+        <div class="mdl-logo">　</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="#">twitter</a></li>
+          <li><a href="#">facebook</a></li>
         </ul>
       </div>
     </footer>
@@ -281,6 +424,7 @@
           $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
         } else {
           $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':'-64px'}, 300, 'swing');
+          $('.menu-container-bottom').removeClass('show')
         }
       } else {
         var initialHeight = $('.bigbox-mobile').height();
@@ -299,25 +443,30 @@
         $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
       } else {
         $('.mdl-layout__header-row').stop().animate({'top':0}, 300)
+
       }
     })
 
 
     // cssのanimationの開始と終了がとれる。
-    var point = $('.point')
-    point.on('webkitAnimationEnd AnimationEnd',function(){
-      point.removeClass('is_show')
-    })
+    // animationの練習
+    // var point = $('.point')
+    // point.on('webkitAnimationEnd AnimationEnd',function(){
+    //   point.removeClass('is_show')
+    // })
+    //
+    // $('.bigbox').on('mousemove',function(e){
+    //   point
+    //     .css({
+    //       "top": e.clientY,
+    //       "left": e.clientX,
+    //     })
+    //     .addClass('is_show')
+    // })
 
-    $('.bigbox').on('mousemove',function(e){
-      point
-        .css({
-          "top": e.clientY,
-          "left": e.clientX,
-        })
-        .addClass('is_show')
+    $('.js-toggle-menu-container-bottom').on('click', function(){
+      $('.menu-container-bottom').toggleClass('show')
     })
-
   })()
 </script>
 </body>

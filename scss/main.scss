@@ -5,15 +5,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 // basic
 body, html {
-    font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
+    font-family: YuGothic, sans-serif;
     box-sizing: border-box;
     background-color: rgba(0,0,0,0.03);
     color: #555;
 }
 
 // variables
-$width-not-mobile: "(min-width: 480px)";
-$width-mobile: "(max-width: 479px)";
+$width-not-mobile: "(min-width: 550px)";
+$width-mobile: "(max-width: 549px)";
 
 // utility
 
@@ -43,9 +43,28 @@ $width-mobile: "(max-width: 479px)";
 // layout
 
 .content-center {
-  margin: 0 10%;
+  margin: 0 12%;
   &.narrow {
     margin: 0 20%;
+  }
+}
+.content-center-mobile {
+  margin: 0 8%;
+}
+
+.mdl-layout {
+    perspective: 1000px;
+    perspective-origin: top;
+}
+
+.mdl-layout__drawer nav.mdl-navigation {
+    margin-bottom: 20px;
+}
+.mdl-layout__drawer {
+  .mdl-tabs__tab {
+    font-size: 0.7rem;
+    text-transform: none;
+    padding: 0 20px;
   }
 }
 
@@ -144,6 +163,9 @@ header.mdl-layout__header.custom {
       .mdl-navigation__link {
           line-height: 45px;
       }
+      .mdl-layout-title.left_align {
+          margin-left: -40px;
+      }
   }
 }
 
@@ -168,7 +190,7 @@ header.mdl-layout__header.custom {
 
 // bigbox
 .bigbox{
-  background-image: url('../images/sample_cava.jpg');
+  background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('http://farm6.static.flickr.com/5082/5334850250_802d0bc1f2_b.jpg') center / cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -197,14 +219,14 @@ header.mdl-layout__header.custom {
   }
 
   .title {
-      color: rgba(0,0,0,0.7);
+      color: rgba(255,255,255,0.7);
       font-family: serif;
       letter-spacing: 5px;
       font-weight: bold;
       display: inline-block;
       &:after {
-          border-top: 2px solid rgba(0,0,0,0.4);
-          border-bottom: 2px solid rgba(0,0,0,0.4);
+          border-top: 2px solid rgba(255,255,255,0.4);
+          border-bottom: 2px solid rgba(255,255,255,0.4);
           display: block;
           content: "";
           height: 4px;
@@ -214,7 +236,7 @@ header.mdl-layout__header.custom {
   .desc {
       margin-top: 10px;
       font-size: 1.2rem;
-      color: rgba(0,0,0,0.7);
+      color: rgba(255,255,255,0.7);
       opacity:0;
   }
 }
@@ -223,6 +245,8 @@ header.mdl-layout__header.custom {
     text-align: center;
     padding: 0 0 16px 0;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
     .icon {
       border-radius: 50%;
       width: 80px;
@@ -232,14 +256,11 @@ header.mdl-layout__header.custom {
     .bigbox-mobile--inner {
         display: inline-block;
         height: 80px;
-        position: relative;
-        vertical-align: bottom;
-        width: calc(63% - 100px);
         .title {
             font-size: 20px;
             margin: 0;
             font-family: serif;
-            position: absolute;top: 14%;
+            margin: 9% 0 5% 0;
             &:after {
                 border-top: 1px solid #555;
                 border-bottom: 1px solid #555;
@@ -249,12 +270,6 @@ header.mdl-layout__header.custom {
                 margin-top: 4px;
             }
         }
-        .desc {
-            position: absolute;
-            top: 63%;
-            left: 0;
-        }
-
         &.show {
           width: 80%;
           height: inherit;
@@ -291,7 +306,7 @@ header.mdl-layout__header.custom {
   }
   .mdl-card__media {
     background-position: center center;
-    background-image: url('https://www.getmdl.io/templates/blog/images/road.jpg');
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://www.getmdl.io/templates/blog/images/road.jpg') center / cover;
     @media #{$width-mobile}{ height: 150px !important; }
     @media #{$width-not-mobile}{ height: 200px !important; }
     position: relative;
@@ -304,6 +319,7 @@ header.mdl-layout__header.custom {
         bottom: 2%;
         left: 2%;
         right: 2%;
+        letter-spacing: 2px;
     }
   }
   .mdl-card__supporting-text {
@@ -322,7 +338,7 @@ header.mdl-layout__header.custom {
     }
     .sns-count {
       border: 1px solid;
-      padding: 2px 0 2px 2px;
+      padding: 4px 0 4px 4px;
       width: 10px;
       font-size: 0.7rem;
       height: 10px;
@@ -332,8 +348,8 @@ header.mdl-layout__header.custom {
       &:after {
         content: '23';
         color: white;
-        padding: 2px;
-        margin-left: 4px;
+        padding: 4px;
+        margin-left: 6px;
       }
       &.hatebu {
         color: #4BA5DA;
@@ -376,9 +392,15 @@ header.mdl-layout__header.custom {
     display: inline-block;
     margin: 2px;
     background-color: #eee;
+    text-decoration: none;
+    font-family: YuGothic;
     &.tag--sm {
         padding: 0px 4px;
         font-size: 0.8rem;
+    }
+    &.tag--md {
+        padding: 4px 8px;
+        font-size: 1rem;
     }
     &.tag--transparent-white {
         background-color: transparent;
@@ -389,6 +411,16 @@ header.mdl-layout__header.custom {
             color: rgba(0,0,0,0.83);
             transition: background-color 0.5s, color 0.5s;
         }
+    }
+    &.tag--transparent-black {
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.83);
+      color: rgba(0, 0, 0, 0.83);
+      &:hover {
+          background-color: rgba(0,0,0,0.83);
+          color: rgba(255,255,255,0.83);
+          transition: background-color 0.5s, color 0.5s;
+      }
     }
 }
 //
@@ -401,3 +433,76 @@ header.mdl-layout__header.custom {
 //     animation: ripple 0.2s;
 //   }
 // }
+
+
+// menu 詳細
+.menu-container-bottom {
+    background-color: rgba(255, 255, 255, 0.85); // headerと同色
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    transform: rotateX(-90deg);
+    transition: transform 0.5s, opacity 0.5s;
+    transform-origin: top;
+    backface-visibility: hidden;
+    z-index: 100;
+    opacity: 0;
+    &.show {
+        transform: rotateX(0deg);
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    .menu-container-bottom--right {
+        padding: 2px 16px 16px;
+        box-sizing: border-box;
+    }
+    .search {
+      margin-bottom: 16px;
+    }
+    .mdl-tabs__panel {
+        padding: 16px 32px;
+    }
+}
+
+.search {
+  display: block;
+  .search-icon {
+    right: 0;
+  }
+  .mdl-textfield {
+    width: 100%;
+  }
+}
+
+.mdl-tabs.with-image {
+  a.mdl-navigation__link {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('/images/sample_cava.jpg') center / cover;
+    padding: 32px 16px;
+    color: #fff;
+  }
+}
+
+
+// pager
+.pager-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 300px;
+    margin: 16px auto;
+    .page-item {
+        width: 30px;
+        height: 30px;
+        background-color: #555;
+        text-align: center;
+        color: white;
+        line-height: 30px;
+        border-radius: 50%;
+        box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+        transition: box-shadow 0.2s;
+        &:hover {
+            box-shadow: 0 3px 4.5px 0 rgba(0,0,0,.12),0 3px 3px 0 rgba(0,0,0,.24);
+            transition: all 0.2s;
+        }
+    }
+}

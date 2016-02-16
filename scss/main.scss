@@ -12,21 +12,27 @@ body, html {
 }
 
 // variables
-$width-not-mobile: "(min-width: 550px)";
-$width-mobile: "(max-width: 549px)";
+$width-not-wide: "(max-width:699px)";
+$width-not-tablet: "(min-width: 550px)";
+$width-tablet: "(max-width: 549px)";
+$width-mobile: "(max-width: 449px)";
 
 // utility
 
-@media #{$width-mobile}{
+@media #{$width-tablet}{
   .hide-mobile{ display: none !important; }
   .show-mobile{ display: inherit !important; }
 }
 
-@media #{$width-not-mobile}{
+@media #{$width-not-tablet}{
   .hide-not-mobile{ display: none !important; }
   .show-not-mobile{ display: inherit !important; }
 }
 
+@media #{$width-not-wide}{
+  .hide-not-wide{ display: none !important; }
+  .show-not-wide{ display: inherit !important; }
+}
 
 // animation
 // @keyframes ripple{
@@ -45,7 +51,8 @@ $width-mobile: "(max-width: 549px)";
 .content-center {
   margin: 0 12%;
   &.narrow {
-    margin: 0 20%;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 .content-center-mobile {
@@ -85,7 +92,7 @@ $width-mobile: "(max-width: 549px)";
   }
 }
 
-@media #{$width-not-mobile} {
+@media #{$width-not-tablet} {
   .mdl-layout__drawer,
   .mdl-layout__header{
     position: absolute;
@@ -96,7 +103,7 @@ $width-mobile: "(max-width: 549px)";
   }
 }
 
-@media #{$width-mobile}{
+@media #{$width-tablet}{
   .mdl-layout__header-row {
     position: absolute;
     top: -40px;
@@ -149,7 +156,7 @@ header.mdl-layout__header.custom {
     }
 }
 
-@media #{$width-not-mobile} {
+@media #{$width-not-tablet} {
   header.mdl-layout__header.custom {
       min-height: 45px;
       height: 45px;
@@ -169,7 +176,7 @@ header.mdl-layout__header.custom {
   }
 }
 
-@media #{$width-mobile}{
+@media #{$width-tablet}{
   .mdl-layout-title {
     text-align: center;
     width: calc(100% - 48px);
@@ -184,7 +191,10 @@ header.mdl-layout__header.custom {
   .mdl-layout-title {
     font-size: 1.2rem;
   }
+}
 
+footer {
+    margin-top: 32px;
 }
 
 
@@ -307,8 +317,8 @@ header.mdl-layout__header.custom {
   .mdl-card__media {
     background-position: center center;
     background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://www.getmdl.io/templates/blog/images/road.jpg') center / cover;
-    @media #{$width-mobile}{ height: 150px !important; }
-    @media #{$width-not-mobile}{ height: 200px !important; }
+    @media #{$width-tablet}{ height: 150px !important; }
+    @media #{$width-not-tablet}{ height: 200px !important; }
     position: relative;
     .title {
         font-size: 1.3rem;
@@ -376,7 +386,7 @@ header.mdl-layout__header.custom {
   }
 }
 
-@media #{$width-mobile}{
+@media #{$width-tablet}{
   .cards {
     [class*='mdl-cell--']{
       width: 100% !important;
@@ -411,6 +421,11 @@ header.mdl-layout__header.custom {
             color: rgba(0,0,0,0.83);
             transition: background-color 0.5s, color 0.5s;
         }
+        &.tag--no-hover:hover {
+          background-color: inherit;
+          color: inherit;
+          transition: none;
+        }
     }
     &.tag--transparent-black {
       background-color: transparent;
@@ -421,6 +436,9 @@ header.mdl-layout__header.custom {
           color: rgba(255,255,255,0.83);
           transition: background-color 0.5s, color 0.5s;
       }
+    }
+    &.tag--no-border {
+        border: none;
     }
 }
 //
@@ -505,4 +523,155 @@ header.mdl-layout__header.custom {
             transition: all 0.2s;
         }
     }
+}
+
+
+// show stype
+.mdl-layout.show {
+  header {
+    display: none;
+  }
+  // bigbox
+  .bigbox{
+    position: relative;
+    display: block;
+    .bigbox-inner {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      max-width: calc(100% - 32px);
+      padding: 32px 16px;
+      text-align: left;
+    }
+
+    .title {
+        color: rgb(255,255,255);
+        font-family: YuGothic;
+        letter-spacing: 1px;
+        font-weight: bold;
+        &:after {
+            display: none;
+        }
+    }
+    .tags {
+      padding-left: 0;
+    }
+  }
+
+  @media #{$width-mobile}{
+    .tags {
+      margin-left: -6px;
+    }
+  }
+  @media #{$width-tablet}{
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+  @media #{$width-not-tablet}{
+    .title {
+      font-size: 2.5rem;
+    }
+    .bigbox-inner {
+      bottom: 50px !important;
+    }
+  }
+
+  .related.mdl-grid {
+    padding: 8px 24px;
+    & > .mdl-cell {
+      width: 100%;
+      margin: 8px 0;
+    }
+    .mdl-card {
+      min-height: inherit;
+      max-height: 120px;
+    }
+    .mdl-card__media {
+        padding: 8px 16px;
+        position: relative;
+        .mdl-card__media--inner {
+            position: absolute;
+            bottom: 7px;
+            width: calc(100% - 32px);
+        }
+        .title {
+            margin-bottom: 4px;
+            position: relative;
+            bottom:0;
+            left:0;
+        }
+        .tags {
+            margin-left: -6px;
+        }
+    }
+  }
+}
+
+// snsボタン
+.bigbox-inner-upper {
+    .sns-buttons {
+        float: right;
+    }
+    .sns-button {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid white;
+        line-height: 30px;
+        text-align: center;
+        color: white;
+        transition: color 0.3s;
+        &:hover {
+            color: #E43873;
+            transition: all 0.3s;
+        }
+    }
+    .site-logo {
+        float: left;
+        .logo {
+            color: white;
+            border-bottom: 2px solid white;
+            padding-bottom: 8px;
+            font-size: 1rem;
+        }
+    }
+
+}
+@media #{$width-tablet}{
+  .bigbox-inner-upper {
+    padding: 32px 16px;
+  }
+}
+@media #{$width-not-tablet}{
+  .bigbox-inner-upper {
+    padding: 64px 16px 0;
+  }
+}
+
+
+
+// 汎用パーツ
+.splitter {
+    color: white;
+    color: rgba(255,255,255,0.83);
+    font-size: 0.7rem;
+    padding: 0 8px;
+}
+.desc {
+    color: rgb(255,255,255);
+    opacity:1;
+    margin: 16px 0 32px 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-family: -webkit-body;
+    &.date {
+        .desc--inner {
+            border-bottom: 2px solid rgb(255, 255, 255);
+            padding-bottom: 8px;
+        }
+    }
+}
+.related .desc {
+  margin: 16px 0;
 }

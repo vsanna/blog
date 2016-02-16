@@ -36,9 +36,14 @@
     font-weight: bold;
     color: rgba(130,130,130,0.7);
 }
+
+.article {
+    padding: 24px;
+}
+
 </style>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header show">
   <header class="mdl-layout__header custom">
     <!-- Top row, always visible -->
     <div class="mdl-layout__header-row">
@@ -65,33 +70,49 @@
   </div>
   <main class="mdl-layout__content">
     <!-- first view -->
-      <!-- not-mobile -->
-      <div class="bigbox hide-mobile mdl-shadow--3dp">
-        <div class="overall"></div>
-        <div class="bigbox-inner">
-          <h1 class="title">Railsで高速にransackを動かす方法と最近の雑感を簡単にまとめたもの</h1>
-          <p class="desc">programming...mmm...</p>
+      <div class="bigbox mdl-shadow--3dp">
+        <div class="content-center bigbox-inner-upper clearfix">
+          <div class="site-logo">
+            <span class="logo">Project Name</span>
+          </div>
+          <div class="sns-buttons">
+            <span class="sns-button">T</span>
+            <span class="sns-button">T</span>
+            <span class="sns-button">T</span>
+          </div>
         </div>
-      </div>
-      <!-- not-mobile -->
-      <!-- mobile -->
-      <div class="bigbox-mobile hide-not-mobile  mdl-shadow--3dp">
-        <div class="bigbox-mobile--inner show">
-          <h1 class="title">Railsで高速にransackを動かす方法と最近の雑感を簡単にまとめたもの</h1>
+        <div class="content-center bigbox-inner">
+          <p class="desc date">
+            <span class="desc--inner">2016.2.14(Fri)</span>
+          </p>
+          <h1 class="title">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル</h1>
           <ul class="tags">
-            <li class="tag tag--sm">Rails</li>
-            <li class="tag tag--sm">Rails</li>
-            <li class="tag tag--sm">Rails</li>
-            <li class="tag tag--sm">Rails</li>
+            <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
+            <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
+            <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
+            <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
           </ul>
         </div>
       </div>
-      <!-- mobile -->
     <!-- first view -->
     <!-- content -->
-    <div class="content-center">
-      <div class="mdl-card mdl-shadow--2dp article">
-        <div class="mdl-card__body">
+    <div class="content-center narrow">
+      <div class="article">
+        <div class="article__body">
+          <h2>asdf</h2>
+          <p>最後にひとつだけ、前述のような領域を広げるアプローチではなく、さらにUIへの理解を深めたい人や、UIと名のつく本は読み尽くした人への本をご紹介。<br>
+          こちらはビジュアルデザイン的なシンボルのような記号の意味ではなく、インターフェイス全般を扱うために必要な言語における意味性と記号表現について紹介されています。<br>
+          具体的なモノではなく、今後より抽象的な概念と併せてUIを考えていく際の基礎として役立つ本です。</p>
+          <h3>asdf</h3>
+          <h4>asdf</h4>
+          <p>最後にひとつだけ、前述のような領域を広げるアプローチではなく、さらにUIへの理解を深めたい人や、UIと名のつく本は読み尽くした人への本をご紹介。<br>
+          こちらはビジュアルデザイン的なシンボルのような記号の意味ではなく、インターフェイス全般を扱うために必要な言語における意味性と記号表現について紹介されています。<br>
+          具体的なモノではなく、今後より抽象的な概念と併せてUIを考えていく際の基礎として役立つ本です。</p>
+          <h4>asdf</h4>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
           <h2>asdf</h2>
           <p>hogehoge</p>
           <p>hogehoge</p>
@@ -102,11 +123,76 @@
           <h3>asdf</h3>
           <h4>asdf</h4>
           <p>hogehoge</p>
+          <p>hogehoge</p>
+          <p>hogehoge</p>
+          <h4>asdf</h4>
+          <p>最後にひとつだけ、前述のような領域を広げるアプローチではなく、さらにUIへの理解を深めたい人や、UIと名のつく本は読み尽くした人への本をご紹介。<br>
+          こちらはビジュアルデザイン的なシンボルのような記号の意味ではなく、インターフェイス全般を扱うために必要な言語における意味性と記号表現について紹介されています。<br>
+          具体的なモノではなく、今後より抽象的な概念と併せてUIを考えていく際の基礎として役立つ本です。</p>
         </div>
-        <div class="mdl-card__footer mdl-card--border"></div>
+        <div class="article__footer">
+          <div class="sns-buttons">
+            <span class="sns-button">T</span>
+            <span class="sns-button">T</span>
+            <span class="sns-button">T</span>
+          </div>
+        </div>
+      </div>
+      <div class="related mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cel--8-col-tablet">
+          <div class="card mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__media">
+              <div class="mdl-card__media--inner">
+                <p class="desc date hide-not-wide">
+                  <span class="desc--inner">2016.2.14(Fri)</span>
+                </p>
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
+                <div class="tags">
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cel--8-col-tablet">
+          <div class="card mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__media">
+              <div class="mdl-card__media--inner">
+                <p class="desc date hide-not-wide">
+                  <span class="desc--inner">2016.2.14(Fri)</span>
+                </p>
+                <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
+                <div class="tags">
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- content -->
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">Project Name</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="#">Top</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mini-footer__right-section">
+        <div class="mdl-logo">　</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="#">twitter</a></li>
+          <li><a href="#">facebook</a></li>
+        </ul>
+      </div>
+    </footer>
   </main>
 </div>
 
@@ -114,14 +200,9 @@
 <script src="./vendor/jquery-2.2.0.min.js"></script>
 <script>
   (function(){
-    $('.bigbox').css('height', $(window).height());
-    $('.overall').css('height', $(window).height());
+    $('.bigbox').css('height',  $(window).height()*(2/3));
+    $('.overall').css('height', $(window).height()*(2/3));
 
-    $('.overall').fadeOut(700, function(){
-      $('.bigbox-inner').fadeIn(700, function(){
-        $('.bigbox-inner .desc').animate({'opacity':'1'}, 500);
-      });
-    })
     // scrollした時に徐々に画像を暗くして(overallをfadein)メニューバーに変更
     $('.mdl-layout__content').scroll(function(){
       if($(window).width() >= 450){
@@ -134,6 +215,7 @@
           $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
         } else {
           $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':'-64px'}, 300, 'swing');
+          $('.menu-container-bottom').removeClass('show')
         }
       } else {
         var initialHeight = $('.bigbox-mobile').height();
@@ -145,7 +227,6 @@
         }
       }
     })
-
 
     $(window).on('resize',function(){
       if ( $(window).width() >= 450){

@@ -45,33 +45,53 @@
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header show">
   <header class="mdl-layout__header custom">
-    <!-- Top row, always visible -->
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title"><a href="/">Project Name</a></span>
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation -->
-      <nav class="mdl-navigation hide-mobile">
-        <a class="mdl-navigation__link" href="">Top</a>
-        <a class="mdl-navigation__link" href="">About</a>
-        <a class="mdl-navigation__link" href="">Contact</a>
-        <a class="mdl-navigation__link" href="">Github</a>
-      </nav>
-    </div>
+    <!-- drawer_toggle_buttonのみ -->
   </header>
-  <div class="mdl-layout__drawer hide-not-mobile">
-    <span class="mdl-layout-title">Title</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Top</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-      <a class="mdl-navigation__link" href="">Github</a>
-    </nav>
+
+  <!-- drawer -->
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Project Name</span>
+    <span class="drawer--section-title">この記事をシェアする</span>
+    <div class="sns-buttons">
+      <span class="sns-button black">t</span>
+      <span class="sns-button black">t</span>
+      <span class="sns-button black">t</span>
+    </div>
+    <span class="drawer--section-title">サイト内を検索する</span>
+    <div class="content-center-mobile">
+      <dev class="search">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield thin">
+            <input type="text" class="mdl-textfield__input" type="text" id="search_drawer">
+            <label class="mdl-textfield__label" for="search_drawer">Text...</label>
+            <label class="mdl-button mdl-js-button mdl-button--icon search-icon" for="search_drawer" data-upgraded=",MaterialButton">
+              <i class="material-icons">search</i>
+            </label>
+          </div>
+        </form>
+      </dev>
+    </div>
+    <span class="drawer--section-title">最近の記事</span>
+    <div class="with-image mdl-navigation">
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+    </div>
+    <span class="drawer--section-title">読まれている記事</span>
+    <div class="with-image mdl-navigation">
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+      <a class="mdl-navigation__link" href="">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+    </div>
   </div>
+  <!-- /drawer -->
+
   <main class="mdl-layout__content">
     <!-- first view -->
       <div class="bigbox mdl-shadow--3dp">
-        <div class="content-center bigbox-inner-upper clearfix">
+        <div class="bigbox-inner-upper clearfix">
           <div class="site-logo">
             <span class="logo">Project Name</span>
           </div>
@@ -81,10 +101,7 @@
             <span class="sns-button">T</span>
           </div>
         </div>
-        <div class="content-center bigbox-inner">
-          <p class="desc date">
-            <span class="desc--inner">2016.2.14(Fri)</span>
-          </p>
+        <div class="bigbox-inner">
           <h1 class="title">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル</h1>
           <ul class="tags">
             <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
@@ -92,6 +109,7 @@
             <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
             <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
           </ul>
+          <span class="date">2016.1.12(Fri)</span>
         </div>
       </div>
     <!-- first view -->
@@ -138,7 +156,7 @@
           </div>
         </div>
       </div>
-      <div class="related mdl-grid">
+      <div class="related">
         <div class="mdl-cell mdl-cell--12-col mdl-cel--8-col-tablet">
           <div class="card mdl-card mdl-shadow--4dp">
             <div class="mdl-card__media">
@@ -177,22 +195,17 @@
     </div>
     <!-- content -->
     <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">Project Name</div>
-        <ul class="mdl-mini-footer__link-list">
-          <li><a href="#">Top</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
       <div class="mdl-mini-footer__right-section">
-        <div class="mdl-logo">　</div>
         <ul class="mdl-mini-footer__link-list">
           <li><a href="#">twitter</a></li>
           <li><a href="#">facebook</a></li>
         </ul>
       </div>
+      <span class="copyright">
+        Copyright © 2010-2016 <a href="https://twitter.com/vsanna2">vsanna</a> All Rights Reserved.
+      </span>
     </footer>
+    <span class="get_bottom_span"></span>
   </main>
 </div>
 
@@ -200,40 +213,33 @@
 <script src="./vendor/jquery-2.2.0.min.js"></script>
 <script>
   (function(){
-    $('.bigbox').css('height',  $(window).height()*(2/3));
-    $('.overall').css('height', $(window).height()*(2/3));
+    $('.bigbox').css('height',  $(window).height()*(3/4));
+    $('.overall').css('height', $(window).height()*(3/4));
 
     // scrollした時に徐々に画像を暗くして(overallをfadein)メニューバーに変更
+    var initialHeight = $(window).height();
+
     $('.mdl-layout__content').scroll(function(){
       if($(window).width() >= 450){
-        var initialHeight = $(window).height();
         var scroll = $('.mdl-layout__content').scrollTop();
-        var rate = (initialHeight - scroll)/initialHeight;
+        var rate = (initialHeight - scroll)/initialHeight + 0.1;
         if ( rate <= 0 ){return;}
         $('.bigbox').css("opacity",rate);
         if (scroll > (initialHeight * 2 / 3)){
-          $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
+          $('.mdl-layout__header.custom').stop().animate({'left':0}, 300, 'swing');
         } else {
-          $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':'-64px'}, 300, 'swing');
-          $('.menu-container-bottom').removeClass('show')
+          $('.mdl-layout__header.custom').stop().animate({'left':'-80px'}, 300, 'swing');
+          $('.menu-container-bottom').removeClass('show');
         }
       } else {
-        var initialHeight = $('.bigbox-mobile').height();
         var scroll = $('.mdl-layout__content').scrollTop();
         if (scroll > (initialHeight * 2 / 3)){
-          $('.mdl-layout__header-row').stop().animate({'top':0}, 300, 'swing');
+          $('.mdl-layout__header.custom').stop().animate({'left':0}, 300, 'swing');
         } else {
-          $('.mdl-layout__header-row').stop().animate({'top':'-64px'}, 300, 'swing');
+          $('.mdl-layout__header.custom').stop().animate({'left':'-80px'}, 300, 'swing');
         }
       }
-    })
 
-    $(window).on('resize',function(){
-      if ( $(window).width() >= 450){
-        $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
-      } else {
-        $('.mdl-layout__header-row').stop().animate({'top':0}, 300)
-      }
     })
 
   })()

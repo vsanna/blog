@@ -64,16 +64,22 @@ $width-mobile: "(max-width: 449px)";
     perspective-origin: top;
 }
 
-.mdl-layout__drawer nav.mdl-navigation {
-    margin-bottom: 20px;
-}
 .mdl-layout__drawer {
+  .mdl-navigation {
+    padding-top: 0px;
+    margin-bottom: 12px;
+  }
   .mdl-tabs__tab {
     font-size: 0.7rem;
     text-transform: none;
     padding: 0 20px;
   }
+  .drawer--section-title {
+      font-size: 0.8rem;
+      padding: 8px 16px;
+  }
 }
+
 
 // mobileではヨコいっぱいに広がる
 @media #{$width-mobile} {
@@ -93,21 +99,25 @@ $width-mobile: "(max-width: 449px)";
 }
 
 @media #{$width-not-tablet} {
-  .mdl-layout__drawer,
-  .mdl-layout__header{
-    position: absolute;
-    top:-64px;
-  }
-  .mdl-layout__drawer-button {
-    display: none;
+  .index {
+    // .mdl-layout__drawer,
+    .mdl-layout__header{
+      position: absolute;
+      top:-64px;
+    }
+    .mdl-layout__drawer-button {
+      display: none;
+    }
   }
 }
 
 @media #{$width-tablet}{
-  .mdl-layout__header-row {
-    position: absolute;
-    top: -40px;
-    width: 100%;
+  .index {
+    .mdl-layout__header-row {
+     position: absolute;
+     top: -40px;
+     width: 100%;
+   }
   }
 }
 
@@ -157,7 +167,7 @@ header.mdl-layout__header.custom {
 }
 
 @media #{$width-not-tablet} {
-  header.mdl-layout__header.custom {
+  .index header.mdl-layout__header.custom {
       min-height: 45px;
       height: 45px;
       .mdl-layout__header-row {
@@ -177,24 +187,41 @@ header.mdl-layout__header.custom {
 }
 
 @media #{$width-tablet}{
-  .mdl-layout-title {
-    text-align: center;
-    width: calc(100% - 48px);
-  }
-  .mdl-layout__header-row,
-  .mdl-layout__drawer-button,
-  .mdl-layout__header {
-      height: 40px !important;
-      min-height: 40px !important;
-      font-size: 0.5rem;
-  }
-  .mdl-layout-title {
-    font-size: 1.2rem;
+  .index {
+    .mdl-layout-title {
+      text-align: center;
+      width: calc(100% - 48px);
+    }
+    .mdl-layout__header-row,
+    .mdl-layout__drawer-button,
+    .mdl-layout__header {
+        height: 40px !important;
+        min-height: 40px !important;
+        font-size: 0.5rem;
+    }
+    .mdl-layout-title {
+      font-size: 1.2rem;
+    }
   }
 }
 
 footer {
     margin-top: 32px;
+    position: relative;
+    .copyright {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
 }
 
 
@@ -492,11 +519,15 @@ footer {
   }
 }
 
-.mdl-tabs.with-image {
+.with-image {
   a.mdl-navigation__link {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('/images/sample_cava.jpg') center / cover;
-    padding: 32px 16px;
-    color: #fff;
+    padding: 32px 16px !important;
+    color: #fff !important;
+    &:hover {
+      opacity: 0.9;
+      transition: all 0.2s;
+    }
   }
 }
 
@@ -525,12 +556,63 @@ footer {
     }
 }
 
-
+// page別スタイル
 // show stype
 .mdl-layout.show {
-  header {
-    display: none;
+  header.custom {
+      background-color: transparent;
+      position: absolute;
+      left:-80px;
+      bottom: 0;
+      min-height: 45px;
+
+      .mdl-layout__drawer-button {
+          margin: -16px 0 0 24px;
+          height: 40px;
+          width: 40px;
+          line-height: 44px;
+
+          border-radius: 50%;
+          background-color: rgba(0,0,0,0.6) !important;
+          box-shadow: 0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
+          transition: box-shadow 0.3s;
+
+          .material-icons {
+              color: rgba(255,255,255,0.6) !important;
+          }
+
+          &:hover {
+              box-shadow: 0 6px 8px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
+              .material-icons {
+                 color: #fff !important;
+                 transition: all 0.3s;
+             }
+          }
+      }
   }
+  .mdl-layout__drawer {
+    .sns-buttons {
+        display: flex;
+        padding: 0 16px;
+        margin-bottom: 16px;
+        .sns-button {
+            margin-right: 8px;
+        }
+    }
+    .mdl-textfield.thin {
+        padding: 8px 0;
+        .mdl-button {
+            bottom: 8px;
+        }
+        .mdl-textfield__label {
+            top: 12px;
+            &:after {
+              bottom: 8px;;
+            }
+        }
+    }
+  }
+
   // bigbox
   .bigbox{
     position: relative;
@@ -540,7 +622,7 @@ footer {
       position: absolute;
       bottom: 0;
       max-width: calc(100% - 32px);
-      padding: 32px 16px;
+      padding: 32px 24px;
       text-align: left;
     }
 
@@ -555,6 +637,13 @@ footer {
     }
     .tags {
       padding-left: 0;
+      margin: 16px 0 0 -5px;
+    }
+    .date {
+      color: rgba(255, 255, 255, 0.83);
+      font-family: monospace;
+      letter-spacing: 1px;
+      font-size: 0.6rem !important;
     }
   }
 
@@ -569,16 +658,17 @@ footer {
     }
   }
   @media #{$width-not-tablet}{
-    .title {
-      font-size: 2.5rem;
+    .bigbox .title {
+      font-size: 2rem;
+      max-width: 70%;
     }
-    .bigbox-inner {
+    .bigbox-inner .bigbox-inner {
       bottom: 50px !important;
     }
   }
 
-  .related.mdl-grid {
-    padding: 8px 24px;
+  .related{
+    width: 100%;
     & > .mdl-cell {
       width: 100%;
       margin: 8px 0;
@@ -586,14 +676,18 @@ footer {
     .mdl-card {
       min-height: inherit;
       max-height: 120px;
+      &:hover {
+        opacity: 0.8;
+        transition: 0.3s;
+      }
     }
     .mdl-card__media {
-        padding: 8px 16px;
+        padding: 8px 24px;
         position: relative;
         .mdl-card__media--inner {
             position: absolute;
             bottom: 7px;
-            width: calc(100% - 32px);
+            width: calc(100% - 48px);
         }
         .title {
             margin-bottom: 4px;
@@ -605,28 +699,35 @@ footer {
             margin-left: -6px;
         }
     }
+    .desc {
+      margin: 16px 0;
+    }
   }
 }
 
 // snsボタン
+.sns-buttons {
+    float: right;
+}
+.sns-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    transition: color 0.3s;
+    &:hover {
+        color: #E43873;
+        transition: all 0.3s;
+    }
+    &.black {
+        color: rgba(0,0,0,0.5);
+        border: 1px solid rgba(0,0,0,0.5);
+    }
+}
 .bigbox-inner-upper {
-    .sns-buttons {
-        float: right;
-    }
-    .sns-button {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        border: 1px solid white;
-        line-height: 30px;
-        text-align: center;
-        color: white;
-        transition: color 0.3s;
-        &:hover {
-            color: #E43873;
-            transition: all 0.3s;
-        }
-    }
     .site-logo {
         float: left;
         .logo {
@@ -636,16 +737,21 @@ footer {
             font-size: 1rem;
         }
     }
-
 }
 @media #{$width-tablet}{
   .bigbox-inner-upper {
-    padding: 32px 16px;
+    padding: 32px 24px;
   }
 }
 @media #{$width-not-tablet}{
   .bigbox-inner-upper {
-    padding: 64px 16px 0;
+    padding: 32px 16px 0;
+  }
+}
+@media (min-width: 900px){
+  .bigbox-inner,
+  .bigbox-inner-upper {
+    margin: 0 12%;
   }
 }
 
@@ -672,6 +778,58 @@ footer {
         }
     }
 }
-.related .desc {
-  margin: 16px 0;
+
+// article
+.desc.date {
+    opacity: 1;
+    font-size: 0.8rem;
+}
+
+.article h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    /* font-weight: inherit; */
+    border-bottom: 1px solid rgba(0,0,0,0.7);
+}
+
+.article h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.article p {
+    font-size: 1rem;
+    line-height: 1.9rem;
+    margin-bottom: 24px;
+}
+
+.article h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: rgba(120,120,120,0.8);
+}
+
+.article ul, .article ol {
+    padding-left: 24px;
+    list-style-type: square;
+    /* list-style-position: inside; */
+}
+
+.article strong {
+    display: inline-block;
+    margin: 0 2px;
+    color: rgba(180,80,80,1);
+}
+
+.article img.article--img {
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+p.article--desc {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin: -8px 0 16px 0;
+    line-height: 1.3rem;
 }

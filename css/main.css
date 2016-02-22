@@ -65,9 +65,12 @@ body, html {
       margin: 0; }
   .mdl-grid {
     padding: 0;
-    width: 100%; }
+    width: 100%; } }
+
+@media (max-width: 699px) {
   .mdl-cell {
-    margin: 5px 0; } }
+    margin: 8px 0;
+    width: 100% !important; } }
 
 @media (min-width: 550px) {
   .index .mdl-layout__header {
@@ -276,7 +279,6 @@ footer {
           margin-top: 4px; }
 
 .mdl-card.card {
-  width: 100%;
   margin-bottom: 1px; }
   .mdl-card.card .card-wrapper {
     margin-bottom: 15px; }
@@ -284,13 +286,8 @@ footer {
     background-position: center center;
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("https://www.getmdl.io/templates/blog/images/road.jpg") center/cover;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("https://www.getmdl.io/templates/blog/images/road.jpg") center/cover;
+    height: 135px !important;
     position: relative; }
-    @media (max-width: 549px) {
-      .mdl-card.card .mdl-card__media {
-        height: 150px !important; } }
-    @media (min-width: 550px) {
-      .mdl-card.card .mdl-card__media {
-        height: 200px !important; } }
     .mdl-card.card .mdl-card__media .title {
       font-size: 20px;
       font-size: 1.3rem;
@@ -567,14 +564,38 @@ footer {
     bottom: 50px !important; } }
 
 .mdl-layout.show .related {
-  width: 100%; }
-  .mdl-layout.show .related > .mdl-cell {
-    width: 100%;
-    margin: 8px 0; }
-  .mdl-layout.show .related .mdl-card {
+  width: 100%;
+  padding: 0;
+  position: relative; }
+  .mdl-layout.show .related .before .material-icons {
+    position: absolute;
+    top: 65px;
+    left: -24px;
+    font-size: 32px;
+    font-size: 2rem;
+    -webkit-transition: left 0.3s;
+            transition: left 0.3s; }
+  .mdl-layout.show .related .before:hover i.material-icons {
+    left: -32px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
+  .mdl-layout.show .related .after .material-icons {
+    position: absolute;
+    top: 65px;
+    right: -24px;
+    font-size: 32px;
+    font-size: 2rem;
+    -webkit-transition: right 0.3s;
+            transition: right 0.3s; }
+  .mdl-layout.show .related .after:hover i.material-icons {
+    right: -32px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
+  .mdl-layout.show .related .card.mdl-card {
     min-height: inherit;
-    max-height: 120px; }
-    .mdl-layout.show .related .mdl-card:hover {
+    min-width: inherit;
+    width: initial; }
+    .mdl-layout.show .related .card.mdl-card:hover {
       opacity: 0.8;
       -webkit-transition: 0.3s;
               transition: 0.3s; }
@@ -583,17 +604,24 @@ footer {
     position: relative; }
     .mdl-layout.show .related .mdl-card__media .mdl-card__media--inner {
       position: absolute;
-      bottom: 7px;
+      bottom: 12px;
       width: calc(100% - 48px); }
     .mdl-layout.show .related .mdl-card__media .title {
       margin-bottom: 4px;
+      max-height: 60px;
       position: relative;
       bottom: 0;
-      left: 0; }
+      left: 0;
+      white-space: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     .mdl-layout.show .related .mdl-card__media .tags {
       margin-left: -6px; }
   .mdl-layout.show .related .desc {
-    margin: 16px 0; }
+    margin: 0; }
+    .mdl-layout.show .related .desc .desc--inner {
+      border-bottom: none;
+      padding-bottom: 0; }
 
 .sns-buttons {
   float: right; }
@@ -712,3 +740,8 @@ p.article--desc {
   margin: -8px 0 16px 0;
   line-height: 20px;
   line-height: 1.3rem; }
+
+.article--section-title {
+  font-size: 20px;
+  font-size: 1.3rem;
+  padding: 0 8px; }

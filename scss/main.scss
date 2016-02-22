@@ -12,6 +12,7 @@ body, html {
 }
 
 // variables
+$width-wide: "(min-width:700px)";
 $width-not-wide: "(max-width:699px)";
 $width-not-tablet: "(min-width: 550px)";
 $width-tablet: "(max-width: 549px)";
@@ -93,8 +94,11 @@ $width-mobile: "(max-width: 449px)";
     padding: 0;
     width: 100%;
   }
+}
+@media#{$width-not-wide}{
   .mdl-cell {
-    margin:5px 0;
+    margin: 8px 0;
+    width: 100% !important;
   }
 }
 
@@ -335,8 +339,8 @@ footer {
 
 
 // card
+
 .mdl-card.card {
-  width: 100%;
   margin-bottom: 1px;
   .card-wrapper{
     margin-bottom: 15px;
@@ -344,8 +348,7 @@ footer {
   .mdl-card__media {
     background-position: center center;
     background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://www.getmdl.io/templates/blog/images/road.jpg') center / cover;
-    @media #{$width-tablet}{ height: 150px !important; }
-    @media #{$width-not-tablet}{ height: 200px !important; }
+    height:135px !important;
     position: relative;
     .title {
         font-size: 1.3rem;
@@ -669,13 +672,40 @@ footer {
 
   .related{
     width: 100%;
-    & > .mdl-cell {
-      width: 100%;
-      margin: 8px 0;
+    padding: 0;
+    position: relative;
+
+    .before { // 前後の記事への導線
+      .material-icons {
+          position: absolute;
+          top: 65px;
+          left: -24px;
+          font-size: 2rem;
+          transition: left 0.3s;
+      }
+      &:hover i.material-icons {
+          left: -32px;
+          transition: all 0.3s;
+      }
     }
-    .mdl-card {
+    .after {
+      .material-icons {
+          position: absolute;
+          top: 65px;
+          right: -24px;
+          font-size: 2rem;
+          transition: right 0.3s;
+      }
+      &:hover i.material-icons {
+          right: -32px;
+          transition: all 0.3s;
+      }
+    }
+
+    .card.mdl-card {
       min-height: inherit;
-      max-height: 120px;
+      min-width: inherit;
+      width: initial;
       &:hover {
         opacity: 0.8;
         transition: 0.3s;
@@ -686,21 +716,29 @@ footer {
         position: relative;
         .mdl-card__media--inner {
             position: absolute;
-            bottom: 7px;
+            bottom: 12px;
             width: calc(100% - 48px);
         }
         .title {
             margin-bottom: 4px;
+            max-height: 60px;
             position: relative;
             bottom:0;
             left:0;
+            white-space: inherit;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .tags {
             margin-left: -6px;
         }
     }
     .desc {
-      margin: 16px 0;
+      margin: 0;
+      .desc--inner {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
     }
   }
 }
@@ -832,4 +870,9 @@ p.article--desc {
     opacity: 0.8;
     margin: -8px 0 16px 0;
     line-height: 1.3rem;
+}
+
+.article--section-title {
+    font-size: 1.3rem;
+    padding: 0 8px;
 }

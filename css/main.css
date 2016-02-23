@@ -745,3 +745,38 @@ p.article--desc {
   font-size: 20px;
   font-size: 1.3rem;
   padding: 0 8px; }
+
+ul.mdl-list.comments {
+  padding-left: 0;
+  margin-bottom: 0; }
+  ul.mdl-list.comments .mdl-list__item-primary-content,
+  ul.mdl-list.comments .mdl-list__item--three-line {
+    height: inherit; }
+  ul.mdl-list.comments .mdl-list__item {
+    -webkit-box-align: inherit;
+    -webkit-align-items: inherit;
+        -ms-flex-align: inherit;
+            align-items: inherit; }
+  ul.mdl-list.comments .mdl-list__item--three-line {
+    margin-right: -9px;
+    padding-left: 0; }
+  ul.mdl-list.comments .mdl-list__item-secondary-content {
+    margin-top: 17px; }
+  ul.mdl-list.comments .child {
+    padding-left: 40px;
+    width: 100%; }
+    ul.mdl-list.comments .child .mdl-list__item.mdl-list__item--three-line {
+      padding-right: 0; }
+
+.comment-input {
+  padding: 0 48px 0 0; }
+  .comment-input .mdl-button {
+    position: absolute; }
+  .comment-input .mdl-textfield {
+    margin-left: 48px;
+    padding: 0;
+    width: 100%; }
+  .comment-input .mdl-textfield__label {
+    top: 4px; }
+    .comment-input .mdl-textfield__label:after {
+      bottom: 0; }

@@ -876,3 +876,50 @@ p.article--desc {
     font-size: 1.3rem;
     padding: 0 8px;
 }
+
+
+// comments
+ul.mdl-list.comments {
+  padding-left: 0;
+  margin-bottom: 0;
+  .mdl-list__item-primary-content,
+  .mdl-list__item--three-line {
+      height: inherit;
+  }
+  .mdl-list__item {
+      align-items: inherit;
+  }
+  .mdl-list__item--three-line {
+      margin-right: -9px;
+      padding-left: 0;
+  }
+  .mdl-list__item-secondary-content {
+      margin-top: 17px;
+  }
+  .child {
+      padding-left: 40px;
+      width: 100%;
+      .mdl-list__item.mdl-list__item--three-line {
+          padding-right: 0;
+      }
+  }
+}
+
+
+.comment-input {
+    padding: 0 48px 0 0;
+    .mdl-button{
+        position: absolute;
+    }
+    .mdl-textfield{
+       margin-left: 48px;
+       padding: 0;
+       width: 100%;
+   }
+    .mdl-textfield__label {
+        top: 4px;
+        &:after {
+            bottom: 0;
+        }
+    }
+}

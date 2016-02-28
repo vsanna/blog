@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/vendor/highlight/styles/solarized_dark.css" media="screen" title="no title" charset="utf-8">
+  <script src="/vendor/highlight/highlight.pack.js" charset="utf-8"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .editor {
+      height: 100%;
+      background-color: #273143;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      font-family: monospace;
+    }
+  </style>
+  <div class="editor" contentEditable>
+    <pre><code class="ruby">
+      def method
+        puts 123
+      end
+    </code></pre>
+  </div>
+</body>
+<script src="./vendor/jquery-2.2.0.min.js"></script>
+<script>
+  $(function(){
+    addEventListener("click",hljs.initHighlighting,!1)
+  })()
+</script>
+</html>

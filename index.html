@@ -9,15 +9,105 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+<style>
+@-webkit-animation showTitle {
+  0% {
+    color: transparent;
+  }
+  100%{
+    color: #fff;
+  }
+}
+.box{
+  width: 500px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+}
+.bd div{
+  background: #FFF;
+  position:absolute;
+  -webkit-transition:all 0.3s;
+  transition:all 0.3s;
+
+}
+.bd div.bdT{
+  width: 0;
+  height:4px;
+  top:0;
+  left:0;
+
+}
+.bd div.bdB{
+  width: 0;
+  height:4px;
+  bottom:0;
+  right:0;
+
+}
+.bd div.bdR{
+  height:0;
+  width :4px;
+  right:0;
+  top:0;
+
+}
+.bd div.bdL{
+  height:0;
+  width :4px;
+  left:0;
+  bottom:0;
+}
+.box h1 {
+    height: 100%;
+    line-height: 100px;
+    color: transparent;
+    font-family: 'Source Code Pro';
+    font-weight: bold;
+    font-size: 3rem;
+    opacity: 0;
+}
+.box.loaded h1 {
+  color: #fff;
+  opacity: 1;
+  transition: all 0.3s 0.6s;
+}
+
+.box.loaded .bdT {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.box.loaded .bdR {
+    height: 100%;
+    transition: all 0.3s 0.3s;
+}
+
+.box.loaded .bdB {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.box.loaded .bdL {
+    height: 100%;
+    transition: all 0.3s 0.3s;
+}
+
+</style>
 
 <div class="mdl-layout index mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header custom">
     <!-- Top row, always visible -->
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title left_align"><a href="/">Project Name</a></span>
+      <span class="mdl-layout-title left_align"><a href="/">< ProjectName/></a></span>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation hide-mobile">
@@ -39,9 +129,9 @@
               <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
           </div>
           <div class="mdl-tabs__panel is-active" id="starks-panel">
-            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
-            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
-            <a href="#" class="tag tag--md tag--transparent-black">カテゴリ1</a>
+            <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
+            <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
+            <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
           </div>
           <div class="mdl-tabs__panel" id="lannisters-panel">
             <ul class="demo-list-icon mdl-list">
@@ -106,7 +196,7 @@
   </div>
 
   <div class="mdl-layout__drawer hide-not-mobile">
-    <span class="mdl-layout-title">Project Name</span>
+    <span class="mdl-layout-title">< ProjectName/></span>
     <div class="content-center-mobile">
       <dev class="search">
         <form action="#">
@@ -158,8 +248,16 @@
       <div class="bigbox hide-mobile mdl-shadow--3dp">
         <div class="overall"></div>
         <div class="bigbox-inner">
-          <h1 class="title">Project Name</h1>
-          <p class="desc">programming...mmm...</p>
+          <!-- <h1 class="title">Project Name</h1> -->
+          <div class="box">
+          	<h1 id="bigbox-title"></h1>
+          	<div class="bd1 bd">
+          		<div class="bdT"></div>
+          		<div class="bdB"></div>
+          		<div class="bdR"></div>
+          		<div class="bdL"></div>
+          	</div>
+          </div>
         </div>
         <!-- <span class="point"></span> -->
       </div>
@@ -167,7 +265,7 @@
       <!-- mobile -->
       <div class="bigbox-mobile hide-not-mobile  mdl-shadow--3dp">
         <div class="bigbox-mobile--inner">
-          <h1 class="title">Project Name</h1>
+          <h1 class="title">< ProjectName/></h1>
         </div>
       </div>
       <!-- mobile -->
@@ -316,7 +414,7 @@
     </div>
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">Project Name</div>
+        <div class="mdl-logo">< ProjectName/></div>
       </div>
       <div class="mdl-mini-footer__right-section">
         <ul class="mdl-mini-footer__link-list">
@@ -343,6 +441,33 @@
     $('.overall').fadeOut(700, function(){
       $('.bigbox-inner').fadeIn(700, function(){
         $('.bigbox-inner .desc').animate({'opacity':'1'}, 500);
+        $('.bigbox .box').addClass('loaded');
+        var text = [
+                    ["<", 200],
+                    [" ", 300],
+                    ["P", 500],
+                    ["r", 800],
+                    ["o", 900],
+                    ["j", 1300],
+                    ["e", 1500],
+                    ["c", 1700],
+                    ["t", 1900],
+                    [" ", 2000],
+                    ["N", 2200],
+                    ["a", 2500],
+                    ["m", 2600],
+                    ["e", 2700],
+                    ["/", 3000],
+                    [">", 3200]
+                  ];
+        var after_text = [];
+        text.forEach((t) => {
+          setTimeout(()=>{
+            after_text.push(t[0])
+            $('#bigbox-title').text(after_text.join(""))
+          },t[1])
+        })
+
       });
     })
     // scrollした時に徐々に画像を暗くして(overallをfadein)メニューバーに変更

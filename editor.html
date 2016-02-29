@@ -25,14 +25,13 @@
       color: rgba(255, 255, 255, 0.8);
       font-size: 0.9rem;
       font-family: monospace;
+      padding: 16px 32px;
     }
+    ::selection{
+      background-color: green;
+    };
   </style>
   <div class="editor" contentEditable>
-    <pre><code class="ruby">
-      def method
-        puts 123
-      end
-    </code></pre>
   </div>
 </body>
 <script src="./vendor/jquery-2.2.0.min.js"></script>

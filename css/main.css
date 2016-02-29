@@ -43,6 +43,12 @@ body, html {
   -webkit-perspective-origin: top;
           perspective-origin: top; }
 
+.mdl-layout__drawer > .mdl-layout-title {
+  font-family: 'Source Code Pro';
+  font-weight: bold;
+  padding-left: 0;
+  text-align: center; }
+
 .mdl-layout__drawer .mdl-navigation {
   padding-top: 0px; }
 
@@ -88,8 +94,9 @@ body, html {
   background-color: #fff;
   color: #555;
   box-shadow: none; }
-  .mdl-layout__header.custom .mdl-layout-title {
-    font-family: serif; }
+  .mdl-layout__header.custom .mdl-layout-title a {
+    font-family: 'Source Code Pro';
+    font-weight: bold; }
   .mdl-layout__header.custom .mdl-navigation__link {
     color: #555;
     text-align: center;
@@ -172,6 +179,9 @@ footer {
     margin-right: 4px; }
   footer .mdl-mini-footer__link-list li:last-child {
     margin-right: 0; }
+  footer .mdl-logo {
+    font-family: 'Source Code Pro';
+    font-weight: bold; }
   footer .copyright {
     position: absolute;
     bottom: 8px;
@@ -221,17 +231,10 @@ footer {
   .bigbox .title {
     color: #FFFFFF;
     color: rgba(255, 255, 255, 0.7);
-    font-family: serif;
+    font-family: 'Source Code Pro';
     letter-spacing: 5px;
     font-weight: bold;
     display: inline-block; }
-    .bigbox .title:after {
-      border-top: 2px solid rgba(255, 255, 255, 0.4);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-      display: block;
-      content: "";
-      height: 4px;
-      margin-top: 5px; }
   .bigbox .desc {
     margin-top: 10px;
     font-size: 19px;
@@ -262,7 +265,8 @@ footer {
     width: 100%; }
     .bigbox-mobile .bigbox-mobile--inner .title {
       font-size: 20px;
-      font-family: serif;
+      font-family: 'Source Code Pro';
+      font-weight: bold;
       color: #222;
       text-align: left;
       line-height: 40px;
@@ -660,10 +664,10 @@ footer {
   float: left; }
   .bigbox-inner-upper .site-logo .logo {
     color: white;
-    border-bottom: 2px solid white;
     padding-bottom: 8px;
     font-size: 16px;
-    font-size: 1rem; }
+    font-size: 1rem;
+    font-family: 'Source Code Pro'; }
 
 @media (max-width: 549px) {
   .bigbox-inner-upper {
@@ -851,9 +855,11 @@ footer {
     margin-bottom: 12px;
     padding: 8px 0 0;
     background-color: #0b252f;
-    color: #fff; }
+    color: #fff;
+    font-family: 'Source Code Pro'; }
     .article .article__body .code-wrapper .hljs {
-      background-color: inherit; }
+      background-color: inherit;
+      font-family: 'Source Code Pro'; }
     .article .article__body .code-wrapper .code-inner {
       position: relative;
       max-width: 700px;

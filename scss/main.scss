@@ -68,6 +68,12 @@ $width-mobile: "(max-width: 449px)";
 }
 
 .mdl-layout__drawer {
+  & > .mdl-layout-title {
+    font-family: 'Source Code Pro';
+    font-weight: bold;
+    padding-left: 0;
+    text-align: center;
+  }
   .mdl-navigation {
     padding-top: 0px;
   }
@@ -130,8 +136,9 @@ $width-mobile: "(max-width: 449px)";
     background-color: #fff;
     color: #555;
     box-shadow: none;
-    .mdl-layout-title {
-        font-family: serif;
+    .mdl-layout-title a{
+        font-family: 'Source Code Pro';
+        font-weight: bold;
     }
     .mdl-navigation__link {
         color: #555;
@@ -242,6 +249,10 @@ footer {
     .mdl-mini-footer__link-list li:last-child {
         margin-right: 0;
     }
+    .mdl-logo {
+      font-family: 'Source Code Pro';
+      font-weight: bold;
+    }
     .copyright {
         position: absolute;
         bottom: 8px;
@@ -264,7 +275,6 @@ footer {
   background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('http://farm6.static.flickr.com/5082/5334850250_802d0bc1f2_b.jpg') center / cover;
   background-position: center center;
   background-repeat: no-repeat;
-  // background-attachment: fixed;
   background-size: cover;
   position: relative;
 
@@ -291,18 +301,10 @@ footer {
 
   .title {
       color: rgba(255,255,255,0.7);
-      font-family: serif;
+      font-family: 'Source Code Pro';
       letter-spacing: 5px;
       font-weight: bold;
       display: inline-block;
-      &:after {
-          border-top: 2px solid rgba(255,255,255,0.4);
-          border-bottom: 2px solid rgba(255,255,255,0.4);
-          display: block;
-          content: "";
-          height: 4px;
-          margin-top: 5px;
-      }
   }
   .desc {
       margin-top: 10px;
@@ -331,7 +333,8 @@ footer {
 
         .title {
             font-size: 20px;
-            font-family: serif;
+            font-family: 'Source Code Pro';
+            font-weight: bold;
             color: #222;
             text-align: left;
             line-height: 40px;
@@ -789,9 +792,11 @@ footer {
         float: left;
         .logo {
             color: white;
-            border-bottom: 2px solid white;
+            // border-bottom: 2px solid white;
             padding-bottom: 8px;
             font-size: 1rem;
+            font-family: 'Source Code Pro';
+            // font-weight: bold;
         }
     }
 }
@@ -1014,8 +1019,10 @@ footer {
           padding: 8px 0 0;
           background-color: rgb(11, 37, 47);
           color: #fff;
+          font-family: 'Source Code Pro';
           .hljs {
             background-color: inherit;
+            font-family: 'Source Code Pro';
           }
           .code-inner {
               position: relative;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>tmp template</title>
+  <script src="./vendor/vue.js"></script>
+  <script src="./vendor/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+  <style>
+  .selectTemplate {
+      padding: 16px 32px;
+  }
+
+  .editorArea {
+      padding: 16px 32px;
+  }
+  #input {
+      min-height: 400px;
+      width: 45%;
+      vertical-align: top;
+      display: inline-block;
+      font-size: 0.8rem;
+      margin-right: 1%;
+  }
+  .show {
+      min-height: 400px;
+      width: 45%;
+      white-space: pre-line;
+      font-size: 0.8rem;
+      border-left: 1px solid gray;
+      padding: 0 16px;
+      display: inline-block;
+
+  }
+  .button {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid gray;
+    margin-right: 16px;
+    transition: background-color 0.3s;
+  }
+  .button:hover {
+      background-color: #F1A5A5;
+      transition: all 0.3s;
+  }
+  #input-title {
+    width: 200px;
+  }
+  </style>
+
+<div id="vue">
+  <div class="selectTemplate">
+    <button class="button" v-on:click="selectTemp('pre')">プレエントリ速報</button>
+    <button class="button" v-on:click="selectTemp('seminor')">説明会</button>
+    <textarea id="input-title" type="text">【17卒対象】企業名 ○○説明会 のご案内</textarea>
+  </div>
+  <div class="editorArea">
+    <textarea v-model="text" id="input"></textarea>
+    <div class="show">{{text}}</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  new Vue({
+    el: "#vue",
+    data: {
+      templates:{
+        pre:"三菱商事の17卒新卒採用情報が公開され、マイページ登録の受付を開始しています。\nご興味がある方はぜひご確認ください！！\n\n[note]\n\n◆◆三菱商事　17卒新卒採用◆◆\n\n【応募資格】\n2017年6月までに四年制大学又は大学院を卒業又は卒業見込みであること\n\n【登録期間】\n3月31日　23：59\n\n[/note]\n\n詳細は <a href='http://student.career-mc.com/' target='_blank'>三菱商事 新卒採用情報</a> より\n※掲載時の情報と異なる場合がございますので、必ず詳細をご確認の上ご応募ください。\n↓記事に関するお問い合わせはこちらから",
+        seminor:"[company_name]が新卒採用の本選考エントリー受付中です。\nご興味がある方はぜひご応募ください！\n\n[note]\n\n◆◆[position]新卒採用◆◆\n\n枕詞\n\n【募集対象】\n[text]\n\n【WEBエントリーシート提出締切】\n[text]\n\n※早い締切でご提出いただいた方から優先的に拝見いたします。\n\n[/note]\n\n詳細、ご応募は <a href='[linklink]' target='_blank'>ヤフー2017年度新卒採用</a> より\n※掲載時の情報と異なる場合がございますので、必ず詳細をご確認の上ご応募ください。\n↓記事に関するお問い合わせはこちらから"
+      },
+      tmp: null,
+      text: ""
+    },
+    methods: {
+      selectTemp: function(key){
+        $('#input').val(this.templates[key])
+        $('.show').text(this.templates[key])
+      }
+    }
+  })
+</script>
+</body>
+</html>

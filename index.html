@@ -100,6 +100,41 @@
     transition: all 0.3s 0.3s;
 }
 
+h1#bigbox-title {
+    display: inline-block;
+}
+
+.title-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1#bigbox-title {
+    line-height: 2.5rem;
+    height: initial;
+}
+
+h1#bigbox-title::after {
+    content: "";
+    display: inline-block;
+    height: 2.5rem;
+    border-right: 3px solid #fff;
+    /* margin-left: 3px; */
+    position: absolute;
+    right: -8px;
+    top: 0;
+}
+
+h1#bigbox-title {
+    position: relative;
+}
+#bigbox-title.on-edit {
+    border-bottom: 3px solid #fff;
+    padding-bottom: 7px;
+    margin-top: 7px;
+}
 </style>
 
 <div class="mdl-layout index mdl-js-layout mdl-layout--fixed-header">
@@ -250,7 +285,9 @@
         <div class="bigbox-inner">
           <!-- <h1 class="title">Project Name</h1> -->
           <div class="box">
-          	<h1 id="bigbox-title"></h1>
+            <div class="title-wrapper">
+              <h1 id="bigbox-title"></h1>
+            </div>
           	<div class="bd1 bd">
           		<div class="bdT"></div>
           		<div class="bdB"></div>
@@ -435,30 +472,35 @@
 <script src="./vendor/jquery-2.2.0.min.js"></script>
 <script>
   (function(){
+    // load時の画面サイズ一杯でbigboxを表示させる
     $('.bigbox').css('height', $(window).height());
     $('.overall').css('height', $(window).height());
 
+    // overallが消える -> bigboxの内容を表示 -> loadedを付与して枠線のanimation
+    // ->文字を入力する演出(.on-editの付与 -> 文字入力 -> on-editの除去)
     $('.overall').fadeOut(700, function(){
       $('.bigbox-inner').fadeIn(700, function(){
         $('.bigbox-inner .desc').animate({'opacity':'1'}, 500);
         $('.bigbox .box').addClass('loaded');
+        $('#bigbox-title').addClass('on-edit')
+        var baseTime = 600; // 枠線表示にかかる時間
         var text = [
-                    ["<", 200],
-                    [" ", 300],
-                    ["P", 500],
-                    ["r", 800],
-                    ["o", 900],
-                    ["j", 1300],
-                    ["e", 1500],
-                    ["c", 1700],
-                    ["t", 1900],
-                    [" ", 2000],
-                    ["N", 2200],
-                    ["a", 2500],
-                    ["m", 2600],
-                    ["e", 2700],
-                    ["/", 3000],
-                    [">", 3200]
+                    ["<", baseTime + 200],
+                    [" ", baseTime + 300],
+                    ["P", baseTime + 500],
+                    ["r", baseTime + 800],
+                    ["o", baseTime + 900],
+                    ["j", baseTime + 1300],
+                    ["e", baseTime + 1500],
+                    ["c", baseTime + 1700],
+                    ["t", baseTime + 1900],
+                    [" ", baseTime + 2000],
+                    ["N", baseTime + 2200],
+                    ["a", baseTime + 2500],
+                    ["m", baseTime + 2600],
+                    ["e", baseTime + 2700],
+                    ["/", baseTime + 3000],
+                    [">", baseTime + 3200]
                   ];
         var after_text = [];
         text.forEach((t) => {
@@ -466,6 +508,8 @@
             after_text.push(t[0])
             $('#bigbox-title').text(after_text.join(""))
           },t[1])
+        }, ()=>{
+          $('#bigbox-title').removeClass('on-edit')
         })
 
       });
@@ -503,7 +547,6 @@
         $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
       } else {
         $('.mdl-layout__header-row').stop().animate({'top':0}, 300)
-
       }
     })
 

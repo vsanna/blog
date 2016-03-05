@@ -1,10 +1,13 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cssnext = require('gulp-cssnext');
+var babel = require('gulp-babel');
 
 var paths = {
   'scss': 'scss/',
-  'css': 'css/'
+  'css': 'css/',
+  'jsx': 'jsx/',
+  'js': 'js/',
 }
 
 gulp.task('scss', function() {
@@ -17,9 +20,15 @@ gulp.task('scss', function() {
     .pipe(gulp.dest(paths.css))
 });
 
+gulp.task('babel', function(){
+  gulp.src(paths.jsx + '**/*.jsx')
+      .pipe(babel())
+      .pipe(gulp.dest(paths.js))
+})
 
-gulp.task('watch',['scss'], function(){
-    gulp.watch('./scss/**/*.scss', ['scss'])
+gulp.task('watch',['scss', 'babel'], function(){
+    gulp.watch(paths.jsx, ['babel'])
+    gulp.watch(paths.scss, ['scss'])
 });
 
 gulp.task('default', ['watch'])

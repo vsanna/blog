@@ -105,7 +105,8 @@ body, html {
 .mdl-layout__header.custom {
   background-color: #F1F1F1;
   color: #555;
-  box-shadow: none; }
+  box-shadow: none;
+  height: 56px; }
   .mdl-layout__header.custom .mdl-layout-title a {
     font-family: 'Source Code Pro';
     font-weight: bold; }
@@ -154,11 +155,11 @@ body, html {
                 transition: all 0.3s; }
 
 @media (max-width: 449px) {
-  header.mdl-layout__header.custom {
+  .mdl-layout__header.custom {
     position: absolute;
     bottom: 16px;
     background-color: transparent; }
-    header.mdl-layout__header.custom .mdl-layout__header-row {
+    .mdl-layout__header.custom .mdl-layout__header-row {
       display: none; } }
 
 @media (min-width: 550px) {
@@ -1060,6 +1061,10 @@ footer {
     width: 4px;
     left: 0;
     bottom: 0; }
+  .box.loaded:hover {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+    cursor: pointer; }
   .box.loaded .bdT {
     width: 100%;
     -webkit-transition: all 0.3s;

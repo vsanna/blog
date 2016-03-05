@@ -144,6 +144,7 @@ $width-mobile: "(max-width: 449px)";
     background-color: #F1F1F1;
     color: #555;
     box-shadow: none;
+    height: 56px;
     .mdl-layout-title a{
         font-family: 'Source Code Pro';
         font-weight: bold;
@@ -198,7 +199,7 @@ $width-mobile: "(max-width: 449px)";
     }
 }
 @media#{$width-mobile}{
-  header.mdl-layout__header.custom {
+  .mdl-layout__header.custom {
     position: absolute;
     bottom: 16px;
     background-color: transparent;
@@ -1254,6 +1255,10 @@ footer {
   }
 
   &.loaded {
+    &:hover {
+        transform: translate(-3px, -3px);
+        cursor: pointer;
+    }
     .bdT {
         width: 100%;
         transition: all 0.3s;

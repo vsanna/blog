@@ -13,130 +13,6 @@
 
 </head>
 <body>
-<style>
-@-webkit-animation showTitle {
-  0% {
-    color: transparent;
-  }
-  100%{
-    color: #fff;
-  }
-}
-.box{
-  width: 500px;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-
-}
-.bd div{
-  background: #FFF;
-  position:absolute;
-  -webkit-transition:all 0.3s;
-  transition:all 0.3s;
-
-}
-.bd div.bdT{
-  width: 0;
-  height:4px;
-  top:0;
-  left:0;
-
-}
-.bd div.bdB{
-  width: 0;
-  height:4px;
-  bottom:0;
-  right:0;
-
-}
-.bd div.bdR{
-  height:0;
-  width :4px;
-  right:0;
-  top:0;
-
-}
-.bd div.bdL{
-  height:0;
-  width :4px;
-  left:0;
-  bottom:0;
-}
-.box h1 {
-    height: 100%;
-    line-height: 100px;
-    color: transparent;
-    font-family: 'Source Code Pro';
-    font-weight: bold;
-    font-size: 3rem;
-    opacity: 0;
-}
-.box.loaded h1 {
-  color: #fff;
-  opacity: 1;
-  transition: all 0.3s 0.6s;
-}
-
-.box.loaded .bdT {
-    width: 100%;
-    transition: all 0.3s;
-}
-
-.box.loaded .bdR {
-    height: 100%;
-    transition: all 0.3s 0.3s;
-}
-
-.box.loaded .bdB {
-    width: 100%;
-    transition: all 0.3s;
-}
-
-.box.loaded .bdL {
-    height: 100%;
-    transition: all 0.3s 0.3s;
-}
-
-h1#bigbox-title {
-    display: inline-block;
-}
-
-.title-wrapper {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1#bigbox-title {
-    line-height: 2.5rem;
-    height: initial;
-}
-
-h1#bigbox-title::after {
-    content: "";
-    display: inline-block;
-    height: 2.5rem;
-    border-right: 3px solid #fff;
-    /* margin-left: 3px; */
-    position: absolute;
-    right: -8px;
-    top: 0;
-}
-
-h1#bigbox-title {
-    position: relative;
-}
-#bigbox-title.on-edit {
-    border-bottom: 3px solid #fff;
-    padding-bottom: 7px;
-    margin-top: 7px;
-}
-</style>
-
 <div class="mdl-layout index mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header custom">
     <!-- Top row, always visible -->
@@ -280,13 +156,15 @@ h1#bigbox-title {
   <main class="mdl-layout__content">
     <!-- first view -->
       <!-- not-mobile -->
-      <div class="bigbox hide-mobile mdl-shadow--3dp">
+      <div class="bigbox mdl-shadow--3dp">
         <div class="overall"></div>
         <div class="bigbox-inner">
-          <!-- <h1 class="title">Project Name</h1> -->
           <div class="box">
             <div class="title-wrapper">
-              <h1 id="bigbox-title"></h1>
+              <div id="bigbox-title">
+                <span class="typing project"></span>
+                <span class="typing name"></span>
+              </div>
             </div>
           	<div class="bd1 bd">
           		<div class="bdT"></div>
@@ -299,12 +177,12 @@ h1#bigbox-title {
         <!-- <span class="point"></span> -->
       </div>
       <!-- not-mobile -->
-      <!-- mobile -->
-      <div class="bigbox-mobile hide-not-mobile  mdl-shadow--3dp">
+      <!-- mobile 一旦mobileもpcと同じモノを表示-->
+      <!-- <div class="bigbox-mobile hide-not-mobile  mdl-shadow--3dp">
         <div class="bigbox-mobile--inner">
           <h1 class="title">< ProjectName/></h1>
         </div>
-      </div>
+      </div> -->
       <!-- mobile -->
     <!-- first view -->
     <!-- content -->
@@ -480,40 +358,73 @@ h1#bigbox-title {
     // ->文字を入力する演出(.on-editの付与 -> 文字入力 -> on-editの除去)
     $('.overall').fadeOut(700, function(){
       $('.bigbox-inner').fadeIn(700, function(){
-        $('.bigbox-inner .desc').animate({'opacity':'1'}, 500);
-        $('.bigbox .box').addClass('loaded');
-        $('#bigbox-title').addClass('on-edit')
+        $('.bigbox .box').addClass('loaded'); // 枠線表示0.6s
+
         var baseTime = 600; // 枠線表示にかかる時間
-        var text = [
-                    ["<", baseTime + 200],
-                    [" ", baseTime + 300],
-                    ["P", baseTime + 500],
-                    ["r", baseTime + 800],
-                    ["o", baseTime + 900],
-                    ["j", baseTime + 1300],
-                    ["e", baseTime + 1500],
-                    ["c", baseTime + 1700],
-                    ["t", baseTime + 1900],
-                    [" ", baseTime + 2000],
-                    ["N", baseTime + 2200],
-                    ["a", baseTime + 2500],
-                    ["m", baseTime + 2600],
-                    ["e", baseTime + 2700],
-                    ["/", baseTime + 3000],
-                    [">", baseTime + 3200]
-                  ];
-        var after_text = [];
-        text.forEach((t) => {
+        var project_text = [
+            ["", baseTime + 300],
+            ["<", 0],
+            [" ", 300],
+            ["P", 400],
+            ["r", 200],
+            ["o", 300],
+            ["j", 200],
+            ["e", 200],
+            ["c", 400],
+            ["t", 200], // 区切れ目
+            [" ", 300 + 600], // ちょっと空ける
+            ["N", 400],
+            ["a", 200],
+            ["m", 400],
+            ["e", 200],
+            ["/", 400],
+            [">", 400]
+        ];
+
+        var after_project_text = [];
+        var projectTextTyping = (index)=>{
+          if (index == project_text.length){ return; }
+          var text = project_text[index][0];
+          var interval = project_text[index][1];
           setTimeout(()=>{
-            after_text.push(t[0])
-            $('#bigbox-title').text(after_text.join(""))
-          },t[1])
-        }, ()=>{
-          $('#bigbox-title').removeClass('on-edit')
-        })
+            writeInOrFinish(index);
+            projectTextTyping(index+1)
+          }, interval)
+        }
+
+        var boundryIndex = 9;
+        var writeInOrFinish = (index)=>{
+          after_project_text.push(project_text[index][0])
+
+          if ( index == 0 ){
+            $('#bigbox-title .project').addClass('on-edit');
+          } else if ( index > 0 && index <= boundryIndex ){
+            $('#bigbox-title .project').text(after_project_text.join(""))
+            if ( index == boundryIndex ){
+              after_project_text = [];
+              setTimeout(()=>{
+                $('#bigbox-title .project').removeClass('on-edit');
+              },300)
+              setTimeout(()=>{
+                $('#bigbox-title .name').addClass('on-edit');
+              },600) // 若干enterまでに余韻にひたる
+            }
+          } else if (index > boundryIndex){
+            $('#bigbox-title .name').text(after_project_text.join(""))
+            if ( index == project_text.length - 1 ){
+              setTimeout(()=>{
+                $('#bigbox-title .name').removeClass('on-edit');
+              },600)// 若干enterまでに余韻にひたる
+              return
+            }
+          }
+        }
+
+        projectTextTyping(0);
 
       });
     })
+    // できれば画像とfontをロードし終わった時にアニメーションをカイスするようなイベントを撮りたい
     // scrollした時に徐々に画像を暗くして(overallをfadein)メニューバーに変更
     $('.mdl-layout__content').scroll(function(){
       if($(window).width() >= 450){

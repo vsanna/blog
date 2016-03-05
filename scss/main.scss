@@ -47,6 +47,14 @@ $width-mobile: "(max-width: 449px)";
 //     opacity:0;
 //   }
 // }
+@keyframes showTitle {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 
 
 // layout
@@ -133,7 +141,7 @@ $width-mobile: "(max-width: 449px)";
 }
 
 .mdl-layout__header.custom {
-    background-color: #fff;
+    background-color: #F1F1F1;
     color: #555;
     box-shadow: none;
     .mdl-layout-title a{
@@ -277,7 +285,6 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
   display: flex;
   justify-content: center; // 子要素のヨコ揃え
   align-items: center; // 子要素のタテ揃え
@@ -294,23 +301,10 @@ footer {
   }
 
   .bigbox-inner {
-    max-width: 80%;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
     display: none;
-  }
-
-  .title {
-      color: rgba(255,255,255,0.7);
-      font-family: 'Source Code Pro';
-      letter-spacing: 5px;
-      font-weight: bold;
-      display: inline-block;
-  }
-  .desc {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.7);
-      opacity:0;
   }
 }
 
@@ -507,7 +501,7 @@ footer {
 // menu 詳細
 .menu-container-bottom {
     position: absolute;
-    top: 63px;
+    top: 56px;
     width: 100%;
     transform: rotateX(-90deg);
     transition: transform 0.5s, opacity 0.5s;
@@ -515,7 +509,7 @@ footer {
     backface-visibility: hidden;
     z-index: 100;
     opacity: 0;
-    background-color: #fff;
+    background-color: #F1F1F1;
     .mdl-list {
        margin: 0;
        .mdl-list__item {
@@ -1164,4 +1158,117 @@ footer {
           }
       }
     }
+}
+
+
+
+// index topのanimation
+.box{
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  line-height: 110px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  #bigbox-title .typing{
+     height: 100%;
+     display: inline-block;
+     font-family: 'Source Code Pro';
+     font-weight: bold;
+     white-space: pre;
+     color: #fff;
+     opacity: 1;
+     @media#{$width-tablet}{
+       font-size: 2rem;
+       line-height: 2rem;
+     }
+     @media#{$width-not-tablet} and #{$width-not-wide}{
+       font-size: 2.5rem;
+       line-height: 2.5rem;
+     }
+     @media#{$width-wide}{
+       font-size: 3rem;
+       line-height: 3rem;
+     }
+     &.on-edit {
+       border-bottom: 3px solid #fff;
+       padding-bottom: 7px;
+       position: relative;
+       background-color: rgba(255,255,255,0.2);
+       transform: translateY(-5px);
+       &::after {
+           content: "";
+           display: inline-block;
+           @media#{$width-tablet}{
+             height: 2rem;
+           }
+           @media#{$width-not-tablet} and #{$width-not-wide}{
+             height: 2.5rem;
+           }
+           @media#{$width-wide}{
+             height: 3rem;
+           }
+           border-right: 3px solid #fff;
+           position: absolute;
+           right: -8px;
+           top: 0;
+           animation: showTitle 1s ease-in 0s;
+           animation-iteration-count: infinite;
+       }
+     }
+  }
+
+
+  .bd {
+    div{
+      background: #FFF;
+      position:absolute;
+      -webkit-transition:all 0.3s;
+      transition:all 0.3s;
+    }
+    .bdT{
+      width: 0;
+      height:4px;
+      top:0;
+      left:0;
+    }
+    .bdB{
+      width: 0;
+      height:4px;
+      bottom:0;
+      right:0;
+    }
+    .bdR{
+      height:0;
+      width :4px;
+      right:0;
+      top:0;
+    }
+    .bdL{
+      height:0;
+      width :4px;
+      left:0;
+      bottom:0;
+    }
+  }
+
+  &.loaded {
+    .bdT {
+        width: 100%;
+        transition: all 0.3s;
+    }
+    .bdR {
+        height: 100%;
+        transition: all 0.3s 0.3s;
+    }
+    .bdB {
+        width: 100%;
+        transition: all 0.3s;
+    }
+    .bdL {
+        height: 100%;
+        transition: all 0.3s 0.3s;
+    }
+  }
 }

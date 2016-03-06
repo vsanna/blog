@@ -2,7 +2,7 @@
   <!-- Top row, always visible -->
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title left_align"><a href="/"><?php bloginfo('name'); ?></a></span>
+    <span class="mdl-layout-title left_align"><a href="/">< Project Name/></a></span>
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
     <nav class="mdl-navigation hide-mobile">
@@ -41,58 +41,38 @@
     <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
       <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
-            <a href="#starks-panel" class="mdl-tabs__tab is-active">Category</a>
-            <a href="#lannisters-panel" class="mdl-tabs__tab">Archives</a>
-            <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
+            <a href="#menu_categories" class="mdl-tabs__tab is-active">Category</a>
+            <a href="#menu_tags" class="mdl-tabs__tab">Tag</a>
+            <a href="#menu_archives" class="mdl-tabs__tab">Archives</a>
         </div>
-        <div class="mdl-tabs__panel is-active" id="starks-panel">
-          <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
-          <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
-          <a href="#" class="tag tag--md tag--transparent-black tag--no-border">カテゴリ1</a>
+        <div class="mdl-tabs__panel is-active" id="menu_categories">
+          <?php $categories = get_categories(); ?>
+          <?php foreach($categories as $cat) : ?>
+            <a href="/category/<?php echo $cat->name; ?>" class="tag tag--sm tag--transparent-black"><?php echo $cat->name; ?> (<?php echo $cat->count; ?>)</a>
+          <?php endforeach; ?>
         </div>
-        <div class="mdl-tabs__panel" id="lannisters-panel">
-          <ul class="demo-list-icon mdl-list">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Bryan Cranston
-          </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Aaron Paul
-            </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Bob Odenkirk
-            </span>
-            </li>
-          </ul>
+        <div class="mdl-tabs__panel" id="menu_tags">
+          <?php $tags = get_tags(); ?>
+          <?php foreach($tags as $tag) : ?>
+            <a href="/category/<?php echo $tag->name; ?>" class="tag tag--sm tag--transparent-black"><?php echo $tag->name; ?> (<?php echo $tag->count; ?>)</a>
+          <?php endforeach; ?>
         </div>
-        <div class="mdl-tabs__panel" id="targaryens-panel">
-          <ul class="demo-list-icon mdl-list">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Bryan Cranston
-          </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Aaron Paul
-            </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-icon">person</i>
-              Bob Odenkirk
-            </span>
-            </li>
-          </ul>
+        <div class="mdl-tabs__panel" id="menu_archives">
+            <?php
+            $args = array(
+            	'type'            => 'monthly',
+            	'limit'           => '',
+            	'format'          => 'html',
+            	// 'before'          => '<a class="mdl-navigation__link" href="">',
+            	// 'after'           => '</a>',
+            	'show_post_count' => false,
+            	'echo'            => 1,
+            	'order'           => 'DESC'
+            );
+             ?>
+             <ul>
+                <?php wp_get_archives($args); ?>
+             </ul>
         </div>
       </div>
     </div>

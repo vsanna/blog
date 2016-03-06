@@ -76,6 +76,21 @@ body, html {
   font-size: 0.8rem;
   padding: 8px 16px; }
 
+.mdl-layout__drawer div#drawer_archives .mdl-navigation__link {
+  padding: 0; }
+
+.mdl-layout__drawer div#drawer_archives ul {
+  padding-left: 0;
+  margin: 0; }
+
+.mdl-layout__drawer div#drawer_archives a {
+  color: #757575;
+  text-decoration: none;
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box; }
+
 @media (max-width: 449px) {
   .content-center {
     margin: 0; }
@@ -290,9 +305,6 @@ footer {
   .card .card-wrapper {
     margin-bottom: 15px; }
   .card .mdl-card__media {
-    background-position: center center;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("https://www.getmdl.io/templates/blog/images/road.jpg") center/cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("https://www.getmdl.io/templates/blog/images/road.jpg") center/cover;
     height: 135px !important;
     position: relative;
     padding: 8px 24px; }
@@ -447,6 +459,23 @@ footer {
     margin-bottom: 16px; }
   .menu-container-bottom .mdl-tabs__panel {
     padding: 16px 32px; }
+  .menu-container-bottom #menu_archives {
+    padding: 0; }
+    .menu-container-bottom #menu_archives .mdl-navigation__link {
+      padding: 0; }
+    .menu-container-bottom #menu_archives ul {
+      padding-left: 0;
+      margin: 0;
+      list-style: none; }
+    .menu-container-bottom #menu_archives a {
+      color: #757575;
+      text-decoration: none;
+      padding: 16px;
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box; }
+      .menu-container-bottom #menu_archives a:hover {
+        background-color: #e0e0e0; }
 
 .search {
   display: block; }
@@ -479,21 +508,29 @@ footer {
           align-items: center;
   max-width: 300px;
   margin: 16px auto; }
-  .pager-items .page-item {
+  .pager-items .page-numbers {
     width: 30px;
     height: 30px;
     background-color: #555;
     text-align: center;
+    text-decoration: none;
     color: white;
     line-height: 30px;
     border-radius: 50%;
     box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
     -webkit-transition: box-shadow 0.2s;
             transition: box-shadow 0.2s; }
-    .pager-items .page-item:hover {
+    .pager-items .page-numbers.current {
+      opacity: 0.5;
+      box-shadow: none; }
+      .pager-items .page-numbers.current:hover {
+        box-shadow: none; }
+    .pager-items .page-numbers:hover {
       box-shadow: 0 3px 4.5px 0 rgba(0, 0, 0, 0.12), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
       -webkit-transition: all 0.2s;
               transition: all 0.2s; }
+    .pager-items .page-numbers .material-icons {
+      line-height: 30px; }
 
 .mdl-layout.show header.custom {
   background-color: transparent;

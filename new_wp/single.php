@@ -46,7 +46,7 @@
               <div class="bigbox mdl-shadow--3dp">
                 <div class="bigbox-inner-upper clearfix">
                   <div class="site-logo">
-                    <span class="logo"><?php bloginfo('name'); ?></span>
+                    <span class="logo">< Project Name/></span>
                   </div>
                   <div class="sns-buttons">
                     <span class="sns-button white"><i class="fa fa-facebook"></i></span>

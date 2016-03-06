@@ -1,5 +1,5 @@
 <div class="mdl-layout__drawer">
-  <span class="mdl-layout-title"><?php bloginfo('name'); ?></span>
+  <span class="mdl-layout-title">< Project Name/></span>
   <span class="drawer--section-title">この記事をシェアする</span>
   <div class="sns-buttons">
     <span class="sns-button black"><i class="fa fa-facebook"></i></span>

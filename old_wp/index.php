@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
           </button>
 
-            <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" href="<?php echo home_url('/'); ?>">< Project Name/></a>
         </div>
         <div class="navbar-collapse collapse menu">
             <?php
@@ -142,16 +142,12 @@
 
 
     <!-- pager -->
-    <?php
-    if ( $wp_query -> max_num_pages > 1 ) : ?>
+    <?php if ( $wp_query -> max_num_pages > 1 ) : ?>
         <ul class='pager'>
           <li class='previous'><?php next_posts_link('&laquo; 古い記事へ'); ?></a></li>
           <li class='next'><?php previous_posts_link('新しい記事へ &raquo;'); ?></a></li>
         </ul>
-
-    <?php
-    endif;
-    ?>
+    <?php endif;?>
     <!-- /pager	 -->
 
     </div><!--container終わり-->

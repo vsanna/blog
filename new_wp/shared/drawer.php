@@ -19,29 +19,33 @@
     <a class="mdl-navigation__link" href="">Contact</a>
     <a class="mdl-navigation__link" href="">Github</a>
   </nav>
-  <div class="with-image mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#drawer_category" class="mdl-tabs__tab is-active">Category</a>
         <a href="#drawer_archives" class="mdl-tabs__tab">Archives</a>
-        <a href="#drawer_others" class="mdl-tabs__tab">Targaryens</a>
     </div>
     <div class="mdl-tabs__panel mdl-navigation is-active" id="drawer_category">
-      <a class="mdl-navigation__link" href="">Top</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-      <a class="mdl-navigation__link" href="">Github</a>
+      <?php $categories = get_categories(); ?>
+      <?php foreach($categories as $cat) : ?>
+        <a class="mdl-navigation__link" href="/category/<?php echo $cat->name; ?>"><?php echo $cat->name; ?> (<?php echo $cat->count; ?>)</a>
+      <?php endforeach; ?>
     </div>
     <div class="mdl-tabs__panel mdl-navigation" id="drawer_archives">
-      <a class="mdl-navigation__link" href="">Top</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-      <a class="mdl-navigation__link" href="">Github</a>
-    </div>
-    <div class="mdl-tabs__panel mdl-navigation" id="drawer_others">
-      <a class="mdl-navigation__link" href="">Top</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-      <a class="mdl-navigation__link" href="">Github</a>
+      <?php
+      $args = array(
+      	'type'            => 'monthly',
+      	'limit'           => '',
+      	'format'          => 'html',
+      	// 'before'          => '<a class="mdl-navigation__link" href="">',
+      	// 'after'           => '</a>',
+      	'show_post_count' => false,
+      	'echo'            => 1,
+      	'order'           => 'DESC'
+      );
+       ?>
+       <ul>
+          <?php wp_get_archives($args); ?>
+       </ul>
     </div>
   </div>
 </div>

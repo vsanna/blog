@@ -95,6 +95,25 @@ $width-mobile: "(max-width: 449px)";
       font-size: 0.8rem;
       padding: 8px 16px;
   }
+
+  // indexのdrawerのみ
+  div#drawer_archives {
+    .mdl-navigation__link {
+      padding: 0;
+    }
+    ul {
+      padding-left: 0;
+      margin: 0;
+    }
+    a {
+      color: #757575;
+      text-decoration: none;
+      padding: 16px;
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
 }
 
 
@@ -354,8 +373,6 @@ footer {
     margin-bottom: 15px;
   }
   .mdl-card__media {
-      background-position: center center;
-      background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://www.getmdl.io/templates/blog/images/road.jpg') center / cover;
       height:135px !important;
       position: relative;
       padding: 8px 24px;
@@ -512,7 +529,7 @@ footer {
        .mdl-list__item {
            padding: 0;
        }
-   }
+    }
     &.show {
         transform: rotateX(0deg);
         opacity: 1;
@@ -527,6 +544,29 @@ footer {
     }
     .mdl-tabs__panel {
         padding: 16px 32px;
+    }
+    // indexのdrawerのみ
+    #menu_archives {
+      padding: 0;
+      .mdl-navigation__link {
+        padding: 0;
+      }
+      ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+      }
+      a {
+        color: #757575;
+        text-decoration: none;
+        padding: 16px;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
     }
 }
 
@@ -566,19 +606,30 @@ footer {
     align-items: center;
     max-width: 300px;
     margin: 16px auto;
-    .page-item {
+    .page-numbers {
         width: 30px;
         height: 30px;
         background-color: #555;
         text-align: center;
+        text-decoration:none;
         color: white;
         line-height: 30px;
         border-radius: 50%;
         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
         transition: box-shadow 0.2s;
+        &.current {
+            opacity: 0.5;
+            box-shadow: none;
+            &:hover {
+                box-shadow: none;
+            }
+        }
         &:hover {
             box-shadow: 0 3px 4.5px 0 rgba(0,0,0,.12),0 3px 3px 0 rgba(0,0,0,.24);
             transition: all 0.2s;
+        }
+        .material-icons {
+          line-height: 30px;
         }
     }
 }

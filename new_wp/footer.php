@@ -1,6 +1,6 @@
 <footer class="mdl-mini-footer">
   <div class="mdl-mini-footer__left-section">
-    <div class="mdl-logo"><?php bloginfo('name'); ?></div>
+    <div class="mdl-logo">< Project Name/></div>
   </div>
   <div class="mdl-mini-footer__right-section">
     <ul class="mdl-mini-footer__link-list">

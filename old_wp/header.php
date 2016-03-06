@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
           </button>
 
-            <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" href="<?php echo home_url('/'); ?>">< Project Name/></a>
         </div>
         <div class="navbar-collapse collapse menu">
             <?php

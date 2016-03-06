@@ -1,11 +1,13 @@
 <footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <div class="mdl-logo">< Project Name/></div>
-  </div>
+  <?php if(!is_single()): ?>
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">< Project Name/></div>
+    </div>
+  <?php endif; ?>
   <div class="mdl-mini-footer__right-section">
     <ul class="mdl-mini-footer__link-list">
-      <li><a href="#"><span class="sns-button white"><i class="fa fa-twitter"></i></span></a></li>
-      <li><a href="#"><span class="sns-button white"><i class="fa fa-facebook"></i></span></a></li>
+      <li><a target="_blank" href="https://twitter.com/vsanna2"><span class="sns-button white"><i class="fa fa-twitter"></i></span></a></li>
+      <li><a target="_blank" href="https://github.com/howtv/liiga"><span class="sns-button white"><i class="fa fa-github"></i></span></a></li>
     </ul>
   </div>
   <span class="copyright">

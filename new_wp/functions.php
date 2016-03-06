@@ -89,16 +89,6 @@ register_sidebar(
 );
 
 
-
-function shortcode_tw(){
-    return'<a href="http://twitter.com/cvcl_r" target="_blank" >@cvcl_r</a>をふぉろーしてね！';
-
-}
-
-add_shortcode('tw','shortcode_tw');
-//簡単なミニタグ[tw]がこれで作れた。
-
-
 function my_widget_title($title){
   return '';
 }
@@ -109,3 +99,32 @@ function my_archives_link($link_html){
 	return $link_html;
 }
 add_filter('get_archives_link', 'my_archives_link');
+
+
+// short_code
+function shortcode_tw($url){
+  $html = file_get_contents($url);
+  $dom = new DOMDocument();
+  $dom = $dom->loadHTML($html);
+  return $dom;
+}
+
+add_shortcode('tw','shortcode_tw');
+//簡単なミニタグ[tw]がこれで作れた。
+
+
+function shortcode_pre($args, $content){
+  $lang = $args[0];
+
+$output = <<< HTML
+<div class="code-wrapper">
+  <div class="code-inner">
+    <span class="lang-label">{$lang}</span>
+    <pre><code class="ruby">{$content}</code></pre>
+  </div>
+</div>
+HTML;
+
+  return $output;
+}
+add_shortcode('pre','shortcode_pre');

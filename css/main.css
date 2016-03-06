@@ -699,11 +699,21 @@ footer {
 .bigbox-inner-upper .site-logo {
   float: left; }
   .bigbox-inner-upper .site-logo .logo {
-    color: white;
+    color: #fff;
     padding-bottom: 8px;
     font-size: 16px;
     font-size: 1rem;
     font-family: 'Source Code Pro'; }
+    .bigbox-inner-upper .site-logo .logo .logo-inner {
+      color: #fff;
+      text-decoration: none;
+      opacity: 1;
+      -webkit-transition: opacity 0.3s;
+              transition: opacity 0.3s; }
+      .bigbox-inner-upper .site-logo .logo .logo-inner:hover {
+        opacity: 0.5;
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s; }
 
 @media (max-width: 549px) {
   .bigbox-inner-upper {

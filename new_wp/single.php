@@ -46,7 +46,7 @@
               <div class="bigbox mdl-shadow--3dp">
                 <div class="bigbox-inner-upper clearfix">
                   <div class="site-logo">
-                    <span class="logo">< Project Name/></span>
+                    <span class="logo"><a class="logo-inner" href="<?php echo home_url(); ?>">< Project Name/></a></span>
                   </div>
                   <div class="sns-buttons">
                     <span class="sns-button white"><i class="fa fa-facebook"></i></span>
@@ -58,12 +58,15 @@
                 <div class="bigbox-inner">
                   <h1 class="title"><?php echo get_the_title(); ?></h1>
                   <ul class="tags">
-                    <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
-                    <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
-                    <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
-                    <li class="tag tag--sm tag--transparent-white tag--no-border">aaa</li><span class="splitter">/</span>
-                    <?php the_category(', ') ?>
-                    <?php the_tags(' ',' ','') ?>
+                    <?php if (has_tag()): ?>
+                      <?php $tags = get_the_tags();?>
+                      <?php foreach($tags as $i => $t): ?>
+                        <a href="#"><li href="#" class="tag tag--sm tag--transparent-white tag--no-border"><?php echo $t->name; ?></li></a>
+                        <?php if ( $i != $tags->length-1 ):?>
+                          <span class="splitter">/</span>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </ul>
                   <span class="date"><?php echo get_the_date(); ?> 2016.1.12(Fri)</span>
                 </div>
@@ -78,55 +81,83 @@
               </div>
               <h2 class="related-title">前後の記事</h2>
               <div class="related mdl-grid">
-                <?php// previous_post_link('%link','前の記事へ',false); ?>
-                <?php// next_post_link('%link','次の記事へ',false); ?>
-                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet before">
-                  <i class="material-icons">keyboard_arrow_left</i>
-                  <div class="card mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__media">
-                      <div class="mdl-card__media--inner">
-                        <p class="desc date">
-                          <span class="desc--inner">2016.2.14(Fri)</span>
-                        </p>
-                        <h2 class="title">Railsでrelationを使いつつransackを高速に回すtipsRailsでrelationを使いつつransackを高速に回すtips</h2>
-                        <div class="tags">
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                <?php if (!empty(get_previous_post())): ?>
+                  <?php
+                    $id = get_previous_post()->ID;
+                    if (has_post_thumbnail('', $id)){
+                      $thumbnail_id = get_post_thumbnail_id($id);
+                      $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
+                    } else {
+                      $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                    }
+                  ?>
+                  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet before">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                    <a href="<?php echo get_previous_post()->guid ?>">
+                      <div class="card mdl-card mdl-shadow--4dp">
+                        <div class="mdl-card__media" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
+                          <div class="mdl-card__media--inner">
+                            <p class="desc date">
+                              <span class="desc--inner"><?php echo get_previous_post()->post_date ?>2016.2.14(Fri)</span>
+                            </p>
+                            <h2 class="title"><?php echo get_previous_post()->post_title ?></h2>
+                            <div class="tags">
+                              <?php if (has_tag('', $id)): ?>
+                                <?php $tags = get_the_tags($id);?>
+                                <?php foreach($tags as $i => $t): ?>
+                                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name ?></span>
+                                  <?php if ( $i != $tags->length-1 ):?>
+                                    <span class="splitter">/</span>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php endif; ?>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
-                </div>
-                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet after">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <div class="card mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__media">
-                      <div class="mdl-card__media--inner">
-                        <p class="desc date">
-                          <span class="desc--inner">2016.2.14(Fri)</span>
-                        </p>
-                        <h2 class="title">Railsでrelationを使いつつransackを高速に回すtips</h2>
-                        <div class="tags">
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
-                          <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover">Rails</span><span class="splitter">/</span>
+                <?php endif; ?>
+                <?php if (!empty(get_next_post())): ?>
+                  <?php
+                    $id = get_next_post()->ID;
+                    if (has_post_thumbnail('', $id)){
+                      $thumbnail_id = get_post_thumbnail_id($id);
+                      $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
+                    } else {
+                      $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                    }
+                  ?>
+                  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet after">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                    <a href="<?php echo get_next_post()->guid ?>">
+                      <div class="card mdl-card mdl-shadow--4dp">
+                        <div class="mdl-card__media" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
+                          <div class="mdl-card__media--inner">
+                            <p class="desc date">
+                              <span class="desc--inner"><?php echo get_next_post()->post_date ?>2016.2.14(Fri)</span>
+                            </p>
+                            <h2 class="title"><?php echo get_next_post()->post_title ?></h2>
+                            <div class="tags">
+                              <?php if (has_tag('', $id)): ?>
+                                <?php $tags = get_the_tags($id);?>
+                                <?php foreach($tags as $i => $t): ?>
+                                  <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name ?></span>
+                                  <?php if ( $i != $tags->length-1 ):?>
+                                    <span class="splitter">/</span>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php endif; ?>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
-                </div>
-                <?php
-                $args = array(
-                        'before' => '<div class="page-link">',
-                        'after' => '</div>',
-                        'link_before' => '<span>',
-                        'link_after' => '</span>',
-                );
-                wp_link_pages($args);
-                ?>
+
+                <?php endif; ?>
               </div>
-              <h2 class="related-title">関連記事</h2>
+              <!-- <h2 class="related-title">関連記事</h2>
               <div class="related mdl-grid">
                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                   <div class="card mdl-card mdl-shadow--4dp">
@@ -196,7 +227,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- content -->
           <?php endwhile; // 繰り返し処理終了 ?>
@@ -208,7 +239,7 @@
       <?php endif; ?>
       <!-- /wordpressループ -->
 
-      <?php get_template_part('shared/show_footer'); ?>
+      <?php get_footer(); ?>
     </main>
   </div>
   <?php get_template_part('shared/share_scripts'); ?>

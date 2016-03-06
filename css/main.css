@@ -4,6 +4,7 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
 body, html {
+  margin: 0;
   font-family: YuGothic, sans-serif;
   box-sizing: border-box;
   background-color: #000000;
@@ -92,7 +93,8 @@ body, html {
 @media (min-width: 550px) {
   .index .mdl-layout__header {
     position: absolute;
-    top: -64px; }
+    top: -64px;
+    height: 56px; }
   .index .mdl-layout__drawer-button {
     display: none; } }
 
@@ -105,8 +107,7 @@ body, html {
 .mdl-layout__header.custom {
   background-color: #F1F1F1;
   color: #555;
-  box-shadow: none;
-  height: 56px; }
+  box-shadow: none; }
   .mdl-layout__header.custom .mdl-layout-title a {
     font-family: 'Source Code Pro';
     font-weight: bold; }
@@ -455,8 +456,6 @@ footer {
     width: 100%; }
 
 .with-image a.mdl-navigation__link {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("/images/sample_cava.jpg") center/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("/images/sample_cava.jpg") center/cover;
   padding: 16px !important;
   font-size: 14px;
   font-size: 0.9rem;

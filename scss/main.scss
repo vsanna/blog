@@ -5,6 +5,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 // basic
 body, html {
+    margin: 0;
     font-family: YuGothic, sans-serif;
     box-sizing: border-box;
     background-color: rgba(0,0,0,0.03);
@@ -123,6 +124,7 @@ $width-mobile: "(max-width: 449px)";
     .mdl-layout__header{
       position: absolute;
       top:-64px;
+      height: 56px;
     }
     .mdl-layout__drawer-button {
       display: none;
@@ -144,7 +146,6 @@ $width-mobile: "(max-width: 449px)";
     background-color: #F1F1F1;
     color: #555;
     box-shadow: none;
-    height: 56px;
     .mdl-layout-title a{
         font-family: 'Source Code Pro';
         font-weight: bold;
@@ -211,11 +212,6 @@ $width-mobile: "(max-width: 449px)";
 
 @media #{$width-not-tablet} {
   .index header.mdl-layout__header.custom {
-      // min-height: 45px;
-      // height: 45px;
-      .mdl-layout__header-row {
-          // height: 45px;
-      }
       .mdl-navigation.hide-mobile {
           height: 40px;
           min-height: 40px;
@@ -549,7 +545,9 @@ footer {
 
 .with-image {
   a.mdl-navigation__link {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('/images/sample_cava.jpg') center / cover;
+    // background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    // background-position: center;
+    // background-size: cover;
     padding: 16px !important;
     font-size: 0.9rem;
     color: #fff !important;

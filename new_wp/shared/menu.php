@@ -78,11 +78,11 @@
     </div>
     <div class="mdl-cell--4-col mdl-cell--8-col-tablet menu-container-bottom--right">
       <dev class="search">
-        <form action="#">
+        <form method="get" action="<?php bloginfo('url'); ?>/">
           <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" id="search-2">
-            <label class="mdl-textfield__label" for="search-2">Text...</label>
-            <label class="mdl-button mdl-js-button mdl-button--icon search-icon" for="search" data-upgraded=",MaterialButton">
+            <input class="mdl-textfield__input" type="text" id="search_menu" name="s" value="<?php echo $_GET['s']; ?>">
+            <label class="mdl-textfield__label" for="search_menu">Text...</label>
+            <label class="mdl-button mdl-js-button mdl-button--icon search-icon" for="search">
               <i class="material-icons">search</i>
             </label>
           </div>

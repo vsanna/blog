@@ -16,7 +16,11 @@
 
 
 ## todo
-- 各種検索
-- コメント
-- 直近の記事
-- hatena人気記事
+- [x] 各種検索
+- [ ] コメント
+- [ ] 直近の記事
+- [ ] hatena人気記事in
+- [ ] sample画像の入集
+  - [ ] 記事のbigbox
+  - [ ] indexのbigbox
+- [ ] indexのbigbox無い時のheader

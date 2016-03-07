@@ -43,7 +43,15 @@
       <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
             <!-- first view -->
-              <div class="bigbox mdl-shadow--3dp">
+            <?php
+              if (has_post_thumbnail()){
+                $thumbnail_id = get_post_thumbnail_id();
+                $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
+              } else {
+                $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+              }
+            ?>
+              <div class="bigbox mdl-shadow--3dp" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
                 <div class="bigbox-inner-upper clearfix">
                   <div class="site-logo">
                     <span class="logo"><a class="logo-inner" href="<?php echo home_url(); ?>">< Project Name/></a></span>

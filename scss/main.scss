@@ -932,17 +932,18 @@ footer {
           margin-bottom: 24px;
       }
       strong {
-          display: inline-block;
-          margin: 0 2px;
           color: #E64C4C;
       }
       ul, ol {
           padding-left: 24px;
           list-style-type: square;
-          /* list-style-position: inside; */
+          li {
+            margin-bottom: 8px;
+          }
       }
       img.article--img {
           width: 100%;
+          height: auto;
           margin: 0 0 16px 0;
       }
       .article--desc { // 画像下に付与するdescription

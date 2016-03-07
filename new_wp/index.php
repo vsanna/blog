@@ -7,7 +7,9 @@
     <main class="mdl-layout__content">
 
       <!-- first view -->
-      <?php if ( is_null($_GET['paged']) || ($_GET['paged'] == 1 )):?>
+      <?php if ( is_null($_GET['s']) &&
+               ( is_null($_GET['paged']) || ($_GET['paged'] == 1 ))
+               ):?>
       <div class="bigbox mdl-shadow--3dp">
         <div class="overall"></div>
         <div class="bigbox-inner">

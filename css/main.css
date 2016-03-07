@@ -804,15 +804,15 @@ footer {
     line-height: 1.9rem;
     margin-bottom: 24px; }
   .article .article__body strong {
-    display: inline-block;
-    margin: 0 2px;
     color: #E64C4C; }
   .article .article__body ul, .article .article__body  ol {
     padding-left: 24px;
-    list-style-type: square;
-    /* list-style-position: inside; */ }
+    list-style-type: square; }
+    .article .article__body ul li, .article .article__body  ol li {
+      margin-bottom: 8px; }
   .article .article__body img.article--img {
     width: 100%;
+    height: auto;
     margin: 0 0 16px 0; }
   .article .article__body .article--desc {
     font-size: 12px;

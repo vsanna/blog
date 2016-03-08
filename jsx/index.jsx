@@ -81,7 +81,7 @@
       var scroll = $('.mdl-layout__content').scrollTop();
       var rate = (initialHeight - scroll)/initialHeight;
       if ( rate <= 0 ){return;}
-      $('.bigbox').css("opacity",rate);
+      // $('.bigbox').css("opacity",rate);
       if (scroll > (initialHeight * 2 / 3)){
         $('.mdl-layout__header, .mdl-layout__drawer, .mdl-layout__drawer-button').stop().animate({'top':0}, 300, 'swing');
       } else {

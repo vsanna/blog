@@ -71,7 +71,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="mdl-card__supporting-text"><?php echo mb_substr(get_the_excerpt(),0, 44);?></div>
+                      <div class="mdl-card__supporting-text"><?php echo mb_substr(get_the_excerpt(),0, 100);?></div>
                     </a>
                   </div>
                 </div>
@@ -98,7 +98,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="mdl-card__supporting-text"><?php echo mb_substr(get_the_excerpt(),0, 44);?></div>
+                    <div class="mdl-card__supporting-text"><?php echo mb_substr(get_the_excerpt(),0, 100);?></div>
                   </a>
                 </div>
               <?php endif; ?>

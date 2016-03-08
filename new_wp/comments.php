@@ -1,3 +1,48 @@
+<style media="screen">
+
+.comments {
+    padding-top: 0;
+}
+
+.mdl-list {
+    padding: 0;
+}
+
+.comments .mdl-list__item-text-body {
+    height: auto;
+    padding: 4px 0 0 56px;
+    line-height: 1.7rem !important;
+}
+
+.comments .mdl-list__item--three-line .mdl-list__item-primary-content {
+    line-height: inherit;
+}
+
+.comments .mdl-list {
+    padding: 0 0 0 58px !important;
+}
+ul.mdl-list.comments {
+    overflow: visible;
+    /* width: 100%; */
+}
+
+
+span.mdl-list__item-secondary-content {
+    position: absolute;
+    right: 0;
+}
+
+ul.mdl-list.comments.parent {
+  margin-right: 40px;
+}
+
+
+.mdl-list__item {
+    padding-right: 0;
+}
+
+</style>
+
 <div class="article__section clearfix">
   <span class="article__section--title">Comment here!</span>
   <span class="article__section--line"></span>
@@ -14,63 +59,19 @@
           <i class="material-icons">send</i>
         </label>
       </form>
+      <?php get_template_part('shared/comment_form'); ?>
     </div>
-    <ul class="mdl-list comments">
-      <li class="mdl-list__item mdl-list__item--three-line">
-        <span class="mdl-list__item-primary-content">
-          <i class="material-icons mdl-list__item-avatar">person</i>
-          <span>Bryan Cranston</span>
-          <span class="mdl-list__item-text-body">
-            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
-            for playing Hal in Malcom in the Middle.
-          </span>
-        </span>
-        <span class="mdl-list__item-secondary-content">
-          <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
-        </span>
-      </li>
-      <li class="mdl-list__item mdl-list__item--three-line">
-        <span class="mdl-list__item-primary-content">
-          <i class="material-icons mdl-list__item-avatar">person</i>
-          <span>Bryan Cranston</span>
-          <span class="mdl-list__item-text-body">
-            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
-            for playing Hal in Malcom in the Middle.
-          </span>
-        </span>
-        <span class="mdl-list__item-secondary-content">
-          <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
-        </span>
-      </li>
-      <li class="mdl-list__item mdl-list__item--three-line">
-        <span class="mdl-list__item-primary-content">
-          <i class="material-icons mdl-list__item-avatar">person</i>
-          <span>Bryan Cranston</span>
-          <span class="mdl-list__item-text-body">
-            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
-            for playing Hal in Malcom in the Middle.
-          </span>
-          <ul class="child child mdl-list">
-            <li class="mdl-list__item mdl-list__item--three-line">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-avatar">person</i>
-                <span>Bryan Cranston</span>
-                <span class="mdl-list__item-text-body">
-                  Bryan Cranston played the role of Walter in Breaking Bad. He is also known
-                  for playing Hal in Malcom in the Middle.
-                </span>
-              </span>
-              <span class="mdl-list__item-secondary-content">
-                <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
-              </span>
-            </li>
-          </ul>
-        </span>
-        <span class="mdl-list__item-secondary-content">
-          <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
-        </span>
-      </li>
-    </ul>
+    <?php if(have_comments()): // コメントがあったら ?>
+      <ul class="mdl-list comments parent">
+        <?php foreach(get_comments() as $c): ?>
+          <?php echo show_comments($c, true); ?>
+        <?php endforeach; ?>
+      </ul>
+    <?php else: ?>
+      <div class="comment-page-link">
+        <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
+      </div>
+    <?php endif;?>
   </div>
   <div class="comment-input">
     <form action="#">

@@ -1016,13 +1016,11 @@ footer {
           -ms-flex-align: inherit;
               align-items: inherit; }
     .comments_area .comments .mdl-list__item--three-line {
-      margin-right: -9px;
       padding-left: 0; }
     .comments_area .comments .mdl-list__item-secondary-content {
       margin-top: 17px; }
     .comments_area .comments .child {
-      padding-left: 40px;
-      width: 100%; }
+      padding-left: 40px; }
       .comments_area .comments .child .mdl-list__item.mdl-list__item--three-line {
         padding-right: 0; }
 

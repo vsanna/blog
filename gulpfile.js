@@ -27,8 +27,8 @@ gulp.task('babel', function(){
 })
 
 gulp.task('watch',['scss'], function(){
-    gulp.watch(paths.scss, ['scss']);
-    // gulp.watch(paths.jsx, ['babel']);
+    gulp.watch(paths.scss, ['scss'])
+        .watch(paths.jsx, ['babel']);
 });
 
 gulp.task('default', ['watch'])

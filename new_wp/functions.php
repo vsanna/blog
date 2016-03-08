@@ -128,3 +128,38 @@ HTML;
   return $output;
 }
 add_shortcode('pre','shortcode_pre');
+
+function show_comments($root_comment, $is_outer){
+
+$children = get_comments(array('parent' => $root_comment->comment_ID));
+// 子コメントでかつ最も外側で読んでいる場合は表示しない
+if ( ($root_comment->comment_parent != '0') && $is_outer ){
+  return;
+}
+if (!is_null($children)){
+  $children_coutput = '<ul class="mdl-list comments child">';
+  foreach( $children as $cc ){
+    $children_coutput = $children_coutput.show_comments($cc, false);
+  }
+  $children_coutput = $children_coutput.'</ul>';
+}
+
+
+$output = <<< HTML
+<li class="mdl-list__item mdl-list__item--three-line" id="{$root_comment->comment_ID}">
+  <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-avatar">person</i>
+    <span>{$root_comment->comment_author}</span>
+    <span class="mdl-list__item-text-body">{$root_comment->comment_content}</span>
+    {$children_coutput}
+  </span>
+  <span class="mdl-list__item-secondary-content">
+    <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
+  </span>
+</li>
+HTML;
+
+return $output;
+}
+
+add_filter('show_comments', 'show_comments');

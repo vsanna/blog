@@ -143,7 +143,7 @@ if (!is_null($children)){
   }
   $children_coutput = $children_coutput.'</ul>';
 }
-
+$home_url = home_url();
 
 $output = <<< HTML
 <li class="mdl-list__item mdl-list__item--three-line" id="{$root_comment->comment_ID}">
@@ -153,8 +153,13 @@ $output = <<< HTML
     <span class="mdl-list__item-text-body">{$root_comment->comment_content}</span>
     {$children_coutput}
   </span>
-  <span class="mdl-list__item-secondary-content">
-    <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" href="#"><i class="material-icons">reply</i></a>
+  <span class="mdl-list__item-secondary-content reply">
+    <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon"
+       href="{$home_url}?p=1&replytocom={$root_comment->comment_ID}#respond"
+       rel='nofollow'
+       onclick="return addComment.moveForm("div-comment-{$root_comment->comment_ID}", "{$root_comment->comment_ID}", "respond", "1" )">
+       <i class="material-icons">reply</i>
+    </a>
   </span>
 </li>
 HTML;

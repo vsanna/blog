@@ -4,27 +4,16 @@
       $req = get_option( 'require_name' );
       $aria_req = ( $req ? " aria-required='true'" : '' );
 
-      // $fields設定
-      $fields = array(
-          'author' => '<p id="inputtext">' . '<label for="author">' . __( 'お名前' )
-                      . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
-                      '<br /><input style="width:50%" class="form-control" id="author" placeholder="例　henry" name="author" type="text" value="'
-                      . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-       );
-
 
       // $comment_field設定
-      $comment_field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '<span class="required">*</span></label><br /><textarea class="form-control" placeholder="こちらにコメントをご記入ください。"id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea></p>';
+      $comment_field = '<textarea class="form-control" placeholder="こちらにコメントをご記入ください。"id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea>';
 
-      // $comment_notes_before設定
-      $comment_notes_before = NULL;
 
       // $args設定
       $args = array(
-          'fields'        => apply_filters( 'comment_form_default_fields', $fields ),
           'comment_field'        => $comment_field,
-          'comment_notes_before'     => $comment_notes_before,
-          'comment_notes_after'  => $comment_notes_after,
+          'comment_notes_before'     => NULL,
+          'comment_notes_after'  => NULL,
           'id_submit'            => 'submit',
           'title_reply'          => __( 'Leave a Reply' ),
           'title_reply_to'       => __( '%s にコメント' ),

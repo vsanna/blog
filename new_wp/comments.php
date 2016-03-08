@@ -47,43 +47,37 @@ ul.mdl-list.comments.parent {
   <span class="article__section--title">Comment here!</span>
   <span class="article__section--line"></span>
   <?php if(have_comments()): // コメントがあったら ?>
-  <span class="article__section--text show-comments">5件のコメント<i class="material-icons">keyboard_arrow_down</i></span>
-  <div class="comments_area">
-    <div class="comment-input">
-      <form action="#">
-        <div class="mdl-textfield mdl-js-textfield">
-          <textarea class="mdl-textfield__input" type="text" rows= "3" id="comment_top" ></textarea>
-          <label class="mdl-textfield__label" for="comment">コメントを残す...</label>
-        </div>
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="comment_top">
-          <i class="material-icons">send</i>
-        </label>
-      </form>
-      <?php get_template_part('shared/comment_form'); ?>
-    </div>
-    <?php if(have_comments()): // コメントがあったら ?>
+    <span class="article__section--text show-comments">5件のコメント<i class="material-icons">keyboard_arrow_down</i></span>
+    <div class="comments_area">
+      <div class="comment-input">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="comment_top" ></textarea>
+            <label class="mdl-textfield__label" for="comment">コメントを残す...</label>
+          </div>
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="comment_top">
+            <i class="material-icons">send</i>
+          </label>
+        </form>
+        <?php get_template_part('shared/comment_form'); ?>
+      </div>
       <ul class="mdl-list comments parent">
         <?php foreach(get_comments() as $c): ?>
           <?php echo show_comments($c, true); ?>
         <?php endforeach; ?>
       </ul>
-    <?php else: ?>
-      <div class="comment-page-link">
-        <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
-      </div>
-    <?php endif;?>
-  </div>
-  <div class="comment-input">
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="comment_bottom" ></textarea>
-        <label class="mdl-textfield__label" for="comment">コメントを残す...</label>
-      </div>
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="comment_bottom">
-        <i class="material-icons">send</i>
-      </label>
-    </form>
-  </div>
+    </div>
+    <div class="comment-input">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" type="text" rows= "3" id="comment_bottom" ></textarea>
+          <label class="mdl-textfield__label" for="comment">コメントを残す...</label>
+        </div>
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="comment_bottom">
+          <i class="material-icons">send</i>
+        </label>
+      </form>
+    </div>
   <?php else: ?>
     <span class="article__section--text">まだコメントががありません</span>
     <div class="comment-input">

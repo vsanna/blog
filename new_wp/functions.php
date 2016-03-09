@@ -154,12 +154,9 @@ $output = <<< HTML
     {$children_coutput}
   </span>
   <span class="mdl-list__item-secondary-content reply">
-    <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon"
-       href="{$home_url}?p=1&replytocom={$root_comment->comment_ID}#respond"
-       rel='nofollow'
-       onclick="return addComment.moveForm("div-comment-{$root_comment->comment_ID}", "{$root_comment->comment_ID}", "respond", "1" )">
+    <button data-replytocom="{$root_comment->comment_ID}" class="replytocom mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" rel='nofollow'>
        <i class="material-icons">reply</i>
-    </a>
+    </button>
   </span>
 </li>
 HTML;

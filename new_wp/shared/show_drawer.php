@@ -5,7 +5,7 @@
     <span class="sns-button black"><i class="fa fa-facebook"></i></span>
     <span class="sns-button black"><i class="fa fa-twitter"></i></span>
     <span class="sns-button black hatena"></span>
-    <span class="sns-button black"><i class="fa fa-get-pocket"></i></span>
+    <!-- <span class="sns-button black"><i class="fa fa-get-pocket"></i></span> -->
   </div>
   <span class="drawer--section-title">サイト内を検索する</span>
   <div class="content-center-mobile">

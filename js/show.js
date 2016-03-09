@@ -33,12 +33,31 @@
     }
   });
 
+  // コメント欄のための仕組み
+  var post_id = $('.comment-area').data('postid');
   $('.show-comments').on('click', function () {
     $(".comments_area").slideToggle(300);
     if ($('.show-comments').is('.open')) {
       $('.show-comments').removeClass('open');
     } else {
       $('.show-comments').addClass('open');
+    }
+  });
+  $('.replytocom').on('click', function (e) {
+    var clicked_button = $(e.target.parentNode);
+    var comment_id = clicked_button.data('replytocom');
+    var current_location = location.pathname;
+    var new_url = current_location + "?replytocom=" + comment_id;
+    $('.form-submit input[type="hidden"][name="comment_parent"]').val(comment_id);
+    if (history) {
+      history.replaceState(null, null, new_url);
+      var input_height = $('#comment_top').offset().top + $('.mdl-layout__content').scrollTop() - 60;
+      $('.mdl-layout__content').animate({
+        scrollTop: input_height
+      });
+    } else {
+      location.href = new_url;
+      location.reload();
     }
   });
 })();

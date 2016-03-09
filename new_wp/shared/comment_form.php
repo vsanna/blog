@@ -1,25 +1,29 @@
 <?php
-      // デフォルト値取得
-      $commenter = wp_get_current_commenter();
-      $req = get_option( 'require_name' );
-      $aria_req = ( $req ? " aria-required='true'" : '' );
+// デフォルト値取得
+$commenter = wp_get_current_commenter();
+$req = get_option( 'require_name' );
+$aria_req = ( $req ? " aria-required='true'" : '' );
+
+$fields = array(
+  'author' => '<div class="mdl-textfield mdl-js-textfield input-name"><input class="mdl-textfield__input" type="text" id="name" name="author"><label class="mdl-textfield__label" for="name">お名前</label></div>',
+);
+
+// $comment_field設定
+$comment_field = '<div class="mdl-textfield mdl-js-textfield"><textarea class="mdl-textfield__input" name="comment" type="text" rows= "3" id="comment_top"></textarea><label class="mdl-textfield__label" for="comment">コメントを残す...</label></div>';
 
 
-      // $comment_field設定
-      $comment_field = '<textarea class="form-control" placeholder="こちらにコメントをご記入ください。"id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea>';
-
-
-      // $args設定
-      $args = array(
-          'comment_field'        => $comment_field,
-          'comment_notes_before'     => NULL,
-          'comment_notes_after'  => NULL,
-          'id_submit'            => 'submit',
-          'title_reply'          => __( 'Leave a Reply' ),
-          'title_reply_to'       => __( '%s にコメント' ),
-          'cancel_reply_link'    => __( 'キャンセル' ),
-          'label_submit'         => __( '書き込む' ),
-      );
-      ?>
-
+// $args設定
+$args = array(
+    'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+    'comment_field'        => $comment_field,
+    'comment_notes_before' => null,
+    'comment_notes_after'  => '<button class="mdl-button mdl-js-button mdl-button--icon" type="submit"><i class="material-icons">send</i></button>',
+    'logged_in_as'         => NULL,
+    'id_submit'            => null,
+    'title_reply'          => null,
+    'title_reply_to'       => null,
+    'cancel_reply_link'    => null,
+    'label_submit'         => null,
+);
+?>
   <?php comment_form($args); ?>

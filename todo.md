@@ -18,11 +18,15 @@
 ## todo
 - [x] 各種検索
 - [ ] コメント
-  - [ ] アンカーで飛べない問題
-  - [ ] 入力ボックスのwp化
+  - [x] アンカーで飛べない問題
+  - [x] 入力ボックスのwp化
+  - [ ] 名前欄の位置
+  - [ ] tab移動の順
+  - [ ] fontのスタイル
 - [ ] 直近の記事
 - [ ] hatena人気記事in
 - [ ] sample画像の入集
   - [ ] 記事のbigbox
   - [ ] indexのbigbox
 - [ ] indexのbigbox無い時のheader
+- [ ] page.phpをどうするか。singleと共有でいいのか

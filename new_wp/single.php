@@ -60,7 +60,7 @@
                     <span class="sns-button white"><i class="fa fa-facebook"></i></span>
                     <span class="sns-button white"><i class="fa fa-twitter"></i></span>
                     <span class="sns-button white hatena"></span>
-                    <span class="sns-button white"><i class="fa fa-get-pocket"></i></span>
+                    <!-- <span class="sns-button white"><i class="fa fa-get-pocket"></i></span> -->
                   </div>
                 </div>
                 <div class="bigbox-inner">

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head lang="ja">
   <meta charset="<?php bloginfo('charset');?>">
+  <meta name="viewport" content="width=device-width">
   <title><?
       if(is_single()){
         wp_title('|',true,'right');

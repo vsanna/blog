@@ -43,12 +43,16 @@
   $('.replytocom').on('click', (e)=>{
     var clicked_button = $(e.target.parentNode);
     var comment_id = clicked_button.data('replytocom');
+    var to_author = clicked_button.data('commentauthor');
     var current_location = location.pathname;
     var new_url = current_location+"?replytocom="+ comment_id;
     $('.form-submit input[type="hidden"][name="comment_parent"]').val(comment_id);
+    $('.reply-to-author').show();
+    $('.reply-to-author--name').text(to_author);
+
     if ( history ){
       history.replaceState(null,null, new_url);
-      var input_height = $('#comment_top').offset().top + $('.mdl-layout__content').scrollTop() - 60;
+      var input_height = $('#comment_input').offset().top + $('.mdl-layout__content').scrollTop() - 60;
       $('.mdl-layout__content')
       .animate({
         scrollTop: input_height

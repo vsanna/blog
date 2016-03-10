@@ -144,17 +144,18 @@ if (!is_null($children)){
   $children_coutput = $children_coutput.'</ul>';
 }
 $home_url = home_url();
+$author = empty($root_comment->comment_author) ? '匿名' : $root_comment->comment_author;
 
 $output = <<< HTML
 <li class="mdl-list__item mdl-list__item--three-line" id="{$root_comment->comment_ID}">
   <span class="mdl-list__item-primary-content">
     <i class="material-icons mdl-list__item-avatar">person</i>
-    <span>{$root_comment->comment_author}</span>
+    <span class="author">{$author}</span>
     <span class="mdl-list__item-text-body">{$root_comment->comment_content}</span>
     {$children_coutput}
   </span>
   <span class="mdl-list__item-secondary-content reply">
-    <button data-replytocom="{$root_comment->comment_ID}" class="replytocom mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" rel='nofollow'>
+    <button data-replytocom="{$root_comment->comment_ID}" data-commentauthor="{$author}" class="replytocom mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--icon" rel='nofollow'>
        <i class="material-icons">reply</i>
     </button>
   </span>

@@ -20,13 +20,14 @@
 - [ ] コメント
   - [x] アンカーで飛べない問題
   - [x] 入力ボックスのwp化
-  - [ ] 名前欄の位置
-  - [ ] tab移動の順
-  - [ ] fontのスタイル
-- [ ] 直近の記事
-- [ ] hatena人気記事in
+  - [x] 名前欄の位置
+  - [x] tab移動の順
+  - [x] fontのスタイル
+- [x] 直近の記事
+- [x] hatena人気記事
 - [ ] sample画像の入集
   - [ ] 記事のbigbox
   - [ ] indexのbigbox
 - [ ] indexのbigbox無い時のheader
 - [ ] page.phpをどうするか。singleと共有でいいのか
+- [ ] 各種日付のformat

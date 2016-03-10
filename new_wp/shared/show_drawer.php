@@ -23,15 +23,47 @@
   </div>
   <span class="drawer--section-title">最近の記事</span>
   <div class="with-image mdl-navigation">
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">短いタイトル。例えば20字じゃくの場合。</a>
+    <?php $args = array(
+    	'posts_per_page'   => 5,
+    	'offset'           => 0,
+    	'category'         => '',
+    	'category_name'    => '',
+    	'orderby'          => 'date',
+    	'order'            => 'DESC',
+    	'include'          => '',
+    	'exclude'          => '',
+    	'meta_key'         => '',
+    	'meta_value'       => '',
+    	'post_type'        => 'post',
+    	'post_mime_type'   => '',
+    	'post_parent'      => '',
+    	'author'	   => '',
+    	'post_status'      => 'publish',
+    	'suppress_filters' => true
+      );
+      $posts_array = get_posts( $args );
+    ?>
+
+    <?php foreach ($posts_array as $p): ?>
+      <?php
+        // var_dump($p)
+          $post_id = $p->ID;
+        $post_title = $p->post_title;
+        $post_link = $p->guid;
+        if (has_post_thumbnail('', $post_id)){
+          $thumbnail_id = get_post_thumbnail_id($post_id);
+          $url = wp_get_attachment_image_src( $thumbnail_id, 'small' )[0];
+        } else {
+          $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+        }
+      ?>
+        <a class="mdl-navigation__link" href="<?= $post_link ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?= $url ?>') center / cover"><?= $post_title ?></a>
+    <?php endforeach; ?>
   </div>
   <span class="drawer--section-title">読まれている記事</span>
-  <div class="with-image mdl-navigation">
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">短いタイトル。例えば20字じゃくの場合。</a>
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">短いタイトル。例えば20字じゃくの場合。</a>
-    <a class="mdl-navigation__link" href="" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_bloginfo('template_url')?>/images/sample_cava.jpg') center / cover">とても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトルとても長い記事タイトル</a>
+  <div class="mdl-navigation">
+    <!-- HTML : popular_entries -->
+    <!-- 人気記事を表示する -->
+    <div id="popular_entries_feed" align="center">Now Loading...</div>
   </div>
 </div>

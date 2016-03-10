@@ -577,6 +577,33 @@ footer {
     .mdl-layout.show .mdl-layout__drawer .mdl-textfield.thin .mdl-textfield__label:after {
       bottom: 8px; }
 
+.mdl-layout.show .mdl-layout__drawer .mdl-navigation__link.hatena-link {
+  color: #222;
+  line-height: 19px;
+  line-height: 1.2rem;
+  position: relative;
+  text-align: left; }
+  .mdl-layout.show .mdl-layout__drawer .mdl-navigation__link.hatena-link .hatena-count {
+    position: absolute;
+    bottom: 8px;
+    right: 24px; }
+
+.mdl-layout.show .mdl-layout__drawer .toHatebu {
+  padding: 8px;
+  color: inherit;
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  line-height: 23px;
+  -webkit-transition: color 0.3s;
+          transition: color 0.3s; }
+  .mdl-layout.show .mdl-layout__drawer .toHatebu:hover {
+    color: #E43873;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
+  .mdl-layout.show .mdl-layout__drawer .toHatebu .material-icons {
+    vertical-align: bottom; }
+
 .mdl-layout.show .bigbox {
   position: relative;
   display: block; }
@@ -899,13 +926,15 @@ footer {
     width: calc(100% + 1000px);
     margin: 12px -500px;
     margin-bottom: 12px;
-    padding: 8px 0 0;
+    padding: 8px 0 24px;
     background-color: #0b252f;
     color: #fff;
     font-family: 'Source Code Pro'; }
     .article .article__body .code-wrapper .hljs {
       background-color: inherit;
       font-family: 'Source Code Pro'; }
+      .article .article__body .code-wrapper .hljs br {
+        display: none; }
     .article .article__body .code-wrapper .code-inner {
       position: relative;
       max-width: 700px;
@@ -962,6 +991,16 @@ footer {
   padding: 0;
   margin-top: 32px;
   position: relative; }
+  .comment-input .reply-to-author {
+    font-size: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    display: none; }
+    .comment-input .reply-to-author .reply-to-author--name {
+      opacity: 1 !important;
+      font-weight: bold;
+      font-size: 16px;
+      font-size: 1rem; }
   .comment-input .mdl-button {
     position: absolute;
     right: 0;
@@ -1015,10 +1054,21 @@ footer {
       -webkit-align-items: inherit;
           -ms-flex-align: inherit;
               align-items: inherit; }
+    .comments_area .comments .mdl-list__item-avatar {
+      font-size: 40px;
+      font-size: 2.5rem;
+      text-align: center;
+      background-color: #C8C2C2; }
     .comments_area .comments .mdl-list__item--three-line {
       padding-left: 0; }
+    .comments_area .comments .mdl-list__item-text-body {
+      color: inherit; }
     .comments_area .comments .mdl-list__item-secondary-content {
       margin-top: 17px; }
+    .comments_area .comments .author {
+      font-size: 14px;
+      font-size: 0.9rem;
+      opacity: 0.6; }
     .comments_area .comments .child {
       padding-left: 40px; }
       .comments_area .comments .child .mdl-list__item.mdl-list__item--three-line {

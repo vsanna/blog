@@ -58,9 +58,6 @@ ul.mdl-list.comments.parent {
   <?php if(have_comments()): // コメントがあったら ?>
     <span class="article__section--text show-comments"><?php echo count(get_comments()); ?>件のコメント<i class="material-icons">keyboard_arrow_down</i></span>
     <div class="comments_area">
-      <div class="comment-input">
-        <?php get_template_part('shared/comment_form'); ?>
-      </div>
       <ul class="mdl-list comments parent">
         <?php foreach(get_comments() as $c): ?>
           <?php echo show_comments($c, true); ?>

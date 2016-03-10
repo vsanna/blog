@@ -585,9 +585,6 @@ footer {
 
 .with-image {
   a.mdl-navigation__link {
-    // background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
-    // background-position: center;
-    // background-size: cover;
     padding: 16px !important;
     font-size: 0.9rem;
     color: #fff !important;
@@ -686,6 +683,33 @@ footer {
               bottom: 8px;;
             }
         }
+    }
+    .mdl-navigation__link.hatena-link {
+        color: #222;
+        line-height: 1.2rem;
+        position: relative;
+        text-align: left;
+        .hatena-count {
+            position: absolute;
+            bottom: 8px;
+            right: 24px;
+        }
+    }
+    .toHatebu {
+      padding: 8px;
+      color: inherit;
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+      line-height: 23px;
+      transition: color 0.3s;
+      &:hover {
+        color: #E43873;
+        transition: all 0.3s;
+      }
+      .material-icons {
+        vertical-align: bottom;
+      }
     }
   }
 
@@ -1069,13 +1093,16 @@ footer {
           width: calc(100% + 1000px);
           margin: 12px -500px;
           margin-bottom: 12px;
-          padding: 8px 0 0;
+          padding: 8px 0 24px;
           background-color: rgb(11, 37, 47);
           color: #fff;
           font-family: 'Source Code Pro';
           .hljs {
             background-color: inherit;
             font-family: 'Source Code Pro';
+            br {
+              display: none;
+            }
           }
           .code-inner {
               position: relative;
@@ -1148,6 +1175,16 @@ footer {
     padding: 0;
     margin-top: 32px;
     position: relative;
+    .reply-to-author {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+        display: none;
+        .reply-to-author--name {
+            opacity: 1 !important;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
     .mdl-button{
         position: absolute;
         right: 0;
@@ -1189,32 +1226,44 @@ footer {
     }
 }
 .comments_area {
-    position: relative;
-    display: none;
+  position: relative;
+  display: none;
 
-    .comments {
+  .comments {
+    padding-left: 0;
+    margin-bottom: 0;
+    .mdl-list__item-primary-content,
+    .mdl-list__item--three-line {
+      height: inherit;
+    }
+    .mdl-list__item {
+      align-items: inherit;
+    }
+    .mdl-list__item-avatar {
+      font-size: 2.5rem;
+      text-align: center;
+      background-color: #C8C2C2;
+    }
+    .mdl-list__item--three-line {
       padding-left: 0;
-      margin-bottom: 0;
-      .mdl-list__item-primary-content,
-      .mdl-list__item--three-line {
-          height: inherit;
-      }
-      .mdl-list__item {
-          align-items: inherit;
-      }
-      .mdl-list__item--three-line {
-          padding-left: 0;
-      }
-      .mdl-list__item-secondary-content {
-          margin-top: 17px;
-      }
-      .child {
-          padding-left: 40px;
-          .mdl-list__item.mdl-list__item--three-line {
-              padding-right: 0;
-          }
+    }
+    .mdl-list__item-text-body {
+      color: inherit;
+    }
+    .mdl-list__item-secondary-content {
+      margin-top: 17px;
+    }
+    .author {
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+    .child {
+      padding-left: 40px;
+      .mdl-list__item.mdl-list__item--three-line {
+        padding-right: 0;
       }
     }
+  }
 }
 
 

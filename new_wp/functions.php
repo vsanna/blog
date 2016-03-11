@@ -120,7 +120,7 @@ $output = <<< HTML
 <div class="code-wrapper">
   <div class="code-inner">
     <span class="lang-label">{$lang}</span>
-    <pre><code class="ruby">{$content}</code></pre>
+    <pre><code class="{$content}">{$content}</code></pre>
   </div>
 </div>
 HTML;

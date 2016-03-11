@@ -6,33 +6,11 @@
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
     <nav class="mdl-navigation hide-mobile">
-      <a class="mdl-navigation__link" href="">Top</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-      <a class="mdl-navigation__link" href="">Github</a>
-      <a class="mdl-navigation__link js-toggle-menu-container-bottom" href="#">☓</a>
-      <?php
-        $defaults = array(
-        //	'theme_location'  => '',
-        //	'menu'            => '',
-                'container'       => '',
-                'container_class' => '',
-                'container_id'    => '',
-                'menu_class'      => 'nav navbar-nav navbar-right',
-                'menu_id'         => '',
-                'echo'            => true,
-                'fallback_cb'     => 'wp_page_menu',
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth'           => 0,
-                'walker'          => ''
-        );
-
-        wp_nav_menu( $defaults );
-        ?>
+      <a class="mdl-navigation__link" href="/">Top</a>
+      <a class="mdl-navigation__link" href="/about">About</a>
+      <a class="mdl-navigation__link" href="/contact">Contact</a>
+      <a class="mdl-navigation__link" href="https://github.com/vsanna">Github</a>
+      <a class="mdl-navigation__link js-toggle-menu-container-bottom toggle-menu-container-bottom mdl-button" href="#"><i class="material-icons">close</i></a>
     </nav>
   </div>
 </header>

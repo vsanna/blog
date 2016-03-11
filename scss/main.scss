@@ -116,6 +116,21 @@ $width-mobile: "(max-width: 449px)";
   }
 }
 
+// header共通処理
+header.mdl-layout__header.custom {
+  .toggle-menu-container-bottom {
+      transform: rotate(45deg);
+      transition: all 0.3s;
+      i {
+        font-size: 1.3rem;
+        vertical-align: super;
+      }
+      &.opened {
+        transform: rotate(0);
+        transition: all 0.3s;
+      }
+  }
+}
 
 // mobileではヨコいっぱいに広がる
 @media #{$width-mobile} {
@@ -173,15 +188,9 @@ $width-mobile: "(max-width: 449px)";
         color: #555;
         text-align: center;
         height: 50px;
-        &:after {
-            border-top: 1px solid #aaa;
-            content: "";
-            width: 50px;
-            height: 3px;
-            display: inherit;
-            border-bottom: 1px solid #aaa;
-            margin-top: -10px;
-        }
+        font-family: 'Source Code Pro';
+        font-weight: 600;
+        opacity: 0.6;
         &:hover {
             color: #E91E63;
             transition: color 0.5s ease;

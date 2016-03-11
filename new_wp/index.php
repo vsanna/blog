@@ -55,7 +55,7 @@
                       <div class="mdl-card__media" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
                         <div class="mdl-card__media--inner">
                           <p class="desc date">
-                            <span class="desc--inner"><?php the_time(); ?><?php echo get_the_date(); ?>2016.2.14(Fri)</span>
+                            <span class="desc--inner"><?php echo get_the_date("Y.n.j(D)"); ?></span>
                           </p>
                           <h2 class="title"><?php the_title(); ?></h2>
                           <div class="tags">
@@ -82,7 +82,7 @@
                     <div class="mdl-card__media" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
                       <div class="mdl-card__media--inner">
                         <p class="desc date">
-                          <span class="desc--inner"><?php the_time(); ?><?php echo get_the_date(); ?>2016.2.14(Fri)</span>
+                          <span class="desc--inner"><?php echo get_the_date("Y.n.j(D)"); ?></span>
                         </p>
                         <h2 class="title"><?php the_title(); ?></h2>
                         <div class="tags">

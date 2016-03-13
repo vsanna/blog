@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <?php get_header(); ?>
-  <body>
+  <body class="page-<?php echo get_query_var('paged');?> page">
   <style>
   .mdl-card__body {
     padding: 20px 5%;

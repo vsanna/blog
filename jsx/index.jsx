@@ -79,7 +79,7 @@
     if($(window).width() >= 450){
       var initialHeight = $(window).height();
       var scroll = $('.mdl-layout__content').scrollTop();
-      var rate = (initialHeight - scroll)/initialHeight;
+      var rate = (initialHeight - scroll) / initialHeight;
       if ( rate <= 0 ){return;}
       // $('.bigbox').css("opacity",rate);
       if (scroll > (initialHeight * 2 / 3)){

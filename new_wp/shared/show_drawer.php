@@ -1,5 +1,5 @@
 <div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">< Project Name/></span>
+  <span class="mdl-layout-title"><a class="site-name site-name__black site-name__lg" href="<?php echo home_url(); ?>">< Project Name/></a></span>
   <span class="drawer--section-title">この記事をシェアする</span>
   <div class="sns-buttons">
     <?php $share_title =  urlencode(get_the_title());?>

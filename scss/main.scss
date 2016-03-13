@@ -164,6 +164,11 @@ header.mdl-layout__header.custom {
       display: none;
     }
   }
+  body.page-2.index {
+    .mdl-layout__header.custom {
+      top: 0 !important;
+    }
+  }
 }
 
 @media #{$width-tablet}{
@@ -227,6 +232,8 @@ header.mdl-layout__header.custom {
         }
     }
 }
+
+
 @media#{$width-mobile}{
   .mdl-layout__header.custom {
     position: absolute;
@@ -1393,5 +1400,39 @@ footer {
         height: 100%;
         transition: all 0.3s 0.3s;
     }
+  }
+}
+
+body.page-2.index {
+  .spacer { // index 2ページ目以降
+    height: 50px;
+    .site-name {
+      line-height: 56px;
+      padding-left: 16px;
+    }
+  }
+}
+
+.site-name {
+  padding-bottom: 8px;
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  transition: color 0.3s;
+  &.site-name__white {
+    color: #fff;
+  }
+  &.site-name__black {
+    color: #424242;
+  }
+  &.site-name__md {
+    font-size: 1rem;
+  }
+  &.site-name__lg {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  &:hover {
+    color: #E43873;
+    transition: all 0.3s;
   }
 }

@@ -1,5 +1,5 @@
 <div class="mdl-layout__drawer hide-not-mobile">
-  <span class="mdl-layout-title">< ProjectName/></span>
+  <span class="mdl-layout-title"><a class="site-name site-name__black site-name__lg" href="<?php echo home_url(); ?>">< Project Name/></a></span>
   <div class="content-center-mobile">
     <dev class="search">
       <form method="get" action="<?php bloginfo('url'); ?>/">

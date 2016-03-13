@@ -1,7 +1,7 @@
 <footer class="mdl-mini-footer">
   <?php if(!is_single()): ?>
     <div class="mdl-mini-footer__left-section">
-      <div class="mdl-logo">< Project Name/></div>
+      <div class="mdl-logo"><a class="site-name site-name__white site-name__lg" href="<?php echo home_url(); ?>">< Project Name/></a></div>
     </div>
   <?php endif; ?>
   <div class="mdl-mini-footer__right-section">

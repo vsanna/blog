@@ -1,15 +1,15 @@
 <!-- get_header() -->
 <?php get_header(); ?>
-<body <?php body_class();?>>
+<body class="page-<?php echo get_query_var('paged');?> index">
   <div class="mdl-layout index mdl-js-layout mdl-layout--fixed-header">
     <?php get_template_part('shared/menu'); ?>
     <?php get_template_part('shared/drawer'); ?>
     <main class="mdl-layout__content">
-
       <!-- first view -->
-      <?php if ( is_null($_GET['s']) &&
-               ( is_null($_GET['paged']) || ($_GET['paged'] == 1 ))
-               ):?>
+      <?php
+        if ( is_null($_GET['s']) && (get_query_var('paged') == 0)):
+        // pagedは1ページ目が0, 2ページ目以降が2から始まる謎仕様
+      ?>
       <div class="bigbox mdl-shadow--3dp">
         <div class="overall"></div>
         <div class="bigbox-inner">
@@ -30,7 +30,9 @@
         </div>
       </div>
       <?php else: ?>
-      <p>2ページ目以降のなんかしら？</p>
+      <div class="spacer">
+        <a class="site-name site-name__black site-name__lg" href="<?php echo home_url(); ?>">< Project Name/></a>
+      </div>
       <?php endif; ?>
       <!-- first view -->
 

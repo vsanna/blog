@@ -146,5 +146,5 @@
   </div>
 
   <script src="<?php bloginfo('template_url'); ?>/vendor/jquery-2.2.0.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/index.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/index.min.js"></script>
 </body>

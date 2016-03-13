@@ -2,13 +2,13 @@
   <!-- Top row, always visible -->
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title left_align"><a href="/wp/">< Project Name/></a></span>
+    <span class="mdl-layout-title left_align"><a href="/">< Project Name/></a></span>
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
     <nav class="mdl-navigation hide-mobile">
-      <a class="mdl-navigation__link" href="/wp/">Top</a>
-      <a class="mdl-navigation__link" href="/wp/profile">About</a>
-      <a class="mdl-navigation__link" href="/wp/contact">Contact</a>
+      <a class="mdl-navigation__link" href="/">Top</a>
+      <a class="mdl-navigation__link" href="/about">About</a>
+      <a class="mdl-navigation__link" href="/contact">Contact</a>
       <a class="mdl-navigation__link" href="https://github.com/vsanna">Github</a>
       <a class="mdl-navigation__link js-toggle-menu-container-bottom toggle-menu-container-bottom" href="#"><i class="material-icons">close</i></a>
     </nav>

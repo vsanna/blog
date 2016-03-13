@@ -102,5 +102,11 @@
     $('.menu-container-bottom').toggleClass('show');
   });
 
-  $('.box.loaded').on('click', function () {});
+  $('.box .bigbox-title').on('click', function () {
+    var posts_top = $('#posts').offset().top + $('.mdl-layout__content').scrollTop() - 60;
+    $('.mdl-layout__content').animate({
+      scrollTop: posts_top
+    });
+    console.log('hoge');
+  });
 })();

@@ -121,6 +121,8 @@ header.mdl-layout__header.custom {
   .toggle-menu-container-bottom {
       transform: rotate(45deg);
       transition: all 0.3s;
+      display: flex;
+      align-items: center;
       i {
         font-size: 1.3rem;
         vertical-align: super;
@@ -312,10 +314,6 @@ footer {
 
 // bigbox
 .bigbox{
-  background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('http://farm6.static.flickr.com/5082/5334850250_802d0bc1f2_b.jpg') center / cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   display: flex;
   justify-content: center; // 子要素のヨコ揃え

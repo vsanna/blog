@@ -48,7 +48,15 @@
                 $thumbnail_id = get_post_thumbnail_id();
                 $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
               } else {
-                $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                $background_imgs = array(
+                  "bgd-img1.jpg",
+                  "bgd-img2.jpg",
+                  "bgd-img3.jpg",
+                  "bgd-img4.jpg",
+                  "bgd-img5.jpg",
+                );
+                $background_img = $background_imgs[array_rand($background_imgs, 1)];
+                $url = get_template_directory_uri()."/images/".$background_img; // default
               }
             ?>
               <div class="bigbox mdl-shadow--3dp" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
@@ -263,7 +271,7 @@
     </main>
   </div>
   <?php get_template_part('shared/share_scripts'); ?>
-  <script src="<?php bloginfo('template_url'); ?>/vendor/jquery-2.2.0.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/show.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-2.2.0.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/show.min.js"></script>
   </body>
 </html>

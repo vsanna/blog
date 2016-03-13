@@ -9,8 +9,16 @@
       <?php
         if ( is_null($_GET['s']) && (get_query_var('paged') == 0)):
         // pagedは1ページ目が0, 2ページ目以降が2から始まる謎仕様
+        $background_imgs = array(
+          "bgd-img1.jpg",
+          "bgd-img2.jpg",
+          "bgd-img3.jpg",
+          "bgd-img4.jpg",
+          "bgd-img5.jpg",
+        );
+        $background_img = $background_imgs[array_rand($background_imgs, 1)];
       ?>
-      <div class="bigbox mdl-shadow--3dp">
+      <div class="bigbox mdl-shadow--3dp" style="background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo get_template_directory_uri();?>/images/<? echo $background_img;?>') center / cover;">
         <div class="overall"></div>
         <div class="bigbox-inner">
           <div class="box">
@@ -38,7 +46,7 @@
 
 
       <!-- content -->
-      <div class="content-center">
+      <div class="content-center" id="posts">
         <!-- wordpressループ -->
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post();// 繰り返し処理開始 ?>
@@ -47,7 +55,7 @@
                   $thumbnail_id = get_post_thumbnail_id();
                   $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
                 } else {
-                  $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                  $url = get_template_directory_uri() . "/images/{$background_img}"; // default
                 }
               ?>
               <?php if (($wp_query->current_post + 1) == 1) :?>
@@ -145,6 +153,6 @@
     </main>
   </div>
 
-  <script src="<?php bloginfo('template_url'); ?>/vendor/jquery-2.2.0.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/index.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-2.2.0.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/index.min.js"></script>
 </body>

@@ -107,7 +107,7 @@
     </main>
   </div>
   <?php get_template_part('shared/share_scripts'); ?>
-  <script src="<?php bloginfo('template_url'); ?>/vendor/jquery-2.2.0.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/show.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-2.2.0.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/show.min.js"></script>
   </body>
 </html>

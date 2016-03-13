@@ -10,7 +10,7 @@
       <a class="mdl-navigation__link" href="/about">About</a>
       <a class="mdl-navigation__link" href="/contact">Contact</a>
       <a class="mdl-navigation__link" href="https://github.com/vsanna">Github</a>
-      <a class="mdl-navigation__link js-toggle-menu-container-bottom toggle-menu-container-bottom mdl-button" href="#"><i class="material-icons">close</i></a>
+      <a class="mdl-navigation__link js-toggle-menu-container-bottom toggle-menu-container-bottom" href="#"><i class="material-icons">close</i></a>
     </nav>
   </div>
 </header>

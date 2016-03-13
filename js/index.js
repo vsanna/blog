@@ -107,6 +107,5 @@
     $('.mdl-layout__content').animate({
       scrollTop: posts_top
     });
-    console.log('hoge');
   });
 })();

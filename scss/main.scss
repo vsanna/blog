@@ -848,10 +848,14 @@ footer {
     transition: color 0.3s;
     font-size: 1.4rem;
     margin-right: 8px;
-    &.hatena::after { // hatenaだけ特別対応
+    a {
+      color: inherit;
+    }
+    &.hatena a{
         content: "B!";
         font-family: Verdana;
         font-weight: bold;
+        text-decoration: none;
     }
     &.black {
         color: rgba(0,0,0,0.5);
@@ -1158,8 +1162,8 @@ footer {
             position: absolute;
             top: 9px;
             right: 0;
-            width: calc(100% - 148px - 120px);
-            margin-right: 120px;
+            width: calc(100% - 148px - 45px);
+            margin-right: 52px;
         }
         .article__section--text {
             float: right;

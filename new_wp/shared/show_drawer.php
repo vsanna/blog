@@ -2,9 +2,15 @@
   <span class="mdl-layout-title">< Project Name/></span>
   <span class="drawer--section-title">この記事をシェアする</span>
   <div class="sns-buttons">
-    <span class="sns-button black"><i class="fa fa-facebook"></i></span>
-    <span class="sns-button black"><i class="fa fa-twitter"></i></span>
-    <span class="sns-button black hatena"></span>
+    <?php $share_title =  urlencode(get_the_title());?>
+    <?php $share_url =  (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . urlencode($_SERVER["REQUEST_URI"]);?>
+    <span class="sns-button black"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url;?>"><i class="fa fa-facebook"></i></a></span>
+    <span class="sns-button black"><a target="_blank" href="https://twitter.com/share?text=<?php echo $share_title?>&url=<?php echo $share_url;?>"><i class="fa fa-twitter"></i></a></span>
+    <span class="sns-button black hatena">
+      <a target="_blank"
+         href="http://b.hatena.ne.jp/entry/<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]?>"
+         title="このエントリーをはてなブックマークに追加">B</a>
+    </span>
     <!-- <span class="sns-button black"><i class="fa fa-get-pocket"></i></span> -->
   </div>
   <span class="drawer--section-title">サイト内を検索する</span>

@@ -16,7 +16,7 @@
       if (rate <= 0) {
         return;
       }
-      $('.bigbox').css("opacity", rate);
+      // $('.bigbox').css("opacity",rate);
       if (scroll > initialHeight * 2 / 3) {
         $('.mdl-layout__header.custom').stop().animate({ 'left': 0 }, 300, 'swing');
       } else {

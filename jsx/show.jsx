@@ -12,7 +12,7 @@
       var scroll = $('.mdl-layout__content').scrollTop();
       var rate = (initialHeight - scroll)/initialHeight + 0.1;
       if ( rate <= 0 ){return;}
-      $('.bigbox').css("opacity",rate);
+      // $('.bigbox').css("opacity",rate);
       if (scroll > (initialHeight * 2 / 3)){
         $('.mdl-layout__header.custom').stop().animate({'left':0}, 300, 'swing');
       } else {

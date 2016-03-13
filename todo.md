@@ -25,10 +25,10 @@
   - [x] fontのスタイル
 - [x] 直近の記事
 - [x] hatena人気記事
-- [ ] sample画像の入集
+- [x] sample画像の入集
   - [ ] 記事のbigbox
   - [ ] indexのbigbox
 - [ ] indexのbigbox無い時のheader
-- [ ] page.phpをどうするか。singleと共有でいいのか
-- [ ] 各種日付のformat
-- [ ] snsボタンの設置
+- [x] page.phpをどうするか。singleと共有でいいのか
+- [x] 各種日付のformat
+- [x] snsボタンの設置

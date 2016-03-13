@@ -719,10 +719,13 @@ footer {
   font-size: 22px;
   font-size: 1.4rem;
   margin-right: 8px; }
-  .sns-button.hatena:after {
+  .sns-button a {
+    color: inherit; }
+  .sns-button.hatena a {
     content: "B!";
     font-family: Verdana;
-    font-weight: bold; }
+    font-weight: bold;
+    text-decoration: none; }
   .sns-button.black {
     color: #000000;
     color: rgba(0, 0, 0, 0.5); }

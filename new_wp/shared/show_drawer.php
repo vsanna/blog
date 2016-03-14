@@ -49,7 +49,17 @@
       );
       $posts_array = get_posts( $args );
     ?>
-
+    <?php
+    $background_imgs = array(
+      "bgd-img1.jpg",
+      "bgd-img2.jpg",
+      "bgd-img3.jpg",
+      "bgd-img4.jpg",
+      "bgd-img5.jpg",
+    );
+    $background_img = $background_imgs[array_rand($background_imgs, 1)];
+    $default_url = get_template_directory_uri()."/images/".$background_img; // default
+    ?>
     <?php foreach ($posts_array as $p): ?>
       <?php
         // var_dump($p)
@@ -60,7 +70,7 @@
           $thumbnail_id = get_post_thumbnail_id($post_id);
           $url = wp_get_attachment_image_src( $thumbnail_id, 'small' )[0];
         } else {
-          $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+          $url = $default_url;
         }
       ?>
         <a class="mdl-navigation__link" href="<?= $post_link ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?= $url ?>') center / cover"><?= $post_title ?></a>

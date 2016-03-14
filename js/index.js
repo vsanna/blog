@@ -100,9 +100,10 @@
 
   $('.js-toggle-menu-container-bottom').on('click', function () {
     $('.menu-container-bottom').toggleClass('show');
+    $('.toggle-menu-container-bottom').toggleClass('opened');
   });
 
-  $('.box .bigbox-title').on('click', function () {
+  $('#bigbox-title').on('click', function () {
     var posts_top = $('#posts').offset().top + $('.mdl-layout__content').scrollTop() - 60;
     $('.mdl-layout__content').animate({
       scrollTop: posts_top

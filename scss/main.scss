@@ -389,10 +389,10 @@ footer {
   width: initial;
   text-decoration: none;
   display: block;
-  transition: box-shadow 0.3s;
+  transition: opacity 0.3s;
   &:hover {
-    box-shadow: 0 12px 7px -4px rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
+    opacity: 0.8;
+    transition: opacity 0.3s;
   }
   .card-wrapper{
     margin-bottom: 15px;
@@ -408,6 +408,7 @@ footer {
       }
       .title {
           font-size: 1.3rem;
+          font-weight: bold;
           color: rgba(255,255,255,0.88);
           line-height: 2rem;
           letter-spacing: 2px;
@@ -418,6 +419,7 @@ footer {
       }
       .tags {
           margin-left: -6px;
+          line-height: 0.9rem;
       }
       .desc {
         margin: 0;
@@ -1412,7 +1414,7 @@ footer {
   }
 }
 
-body.page-2.index {
+body.index {
   .spacer { // index 2ページ目以降
     height: 50px;
     .site-name {

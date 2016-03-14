@@ -84,7 +84,7 @@
                       <?php $tags = get_the_tags();?>
                       <?php foreach($tags as $i => $t): ?>
                         <a href="#"><li href="#" class="tag tag--sm tag--transparent-white tag--no-border"><?php echo $t->name; ?></li></a>
-                        <?php if ( $i != $tags->length-1 ):?>
+                        <?php if ( $i != count($tags)-1 ):?>
                           <span class="splitter">/</span>
                         <?php endif; ?>
                       <?php endforeach; ?>
@@ -103,7 +103,7 @@
               </div>
               <h2 class="related-title">前後の記事</h2>
               <div class="related mdl-grid">
-                <?php if (!empty(get_previous_post())): ?>
+                <?php if (!empty(get_previous_post()->ID)): ?>
                   <?php
                     $id = get_previous_post()->ID;
                     if (has_post_thumbnail('', $id)){
@@ -130,8 +130,9 @@
                               <?php if (has_tag('', $id)): ?>
                                 <?php $tags = get_the_tags($id);?>
                                 <?php foreach($tags as $i => $t): ?>
+                                  <?php if ($i > 2){ break; } ?>
                                   <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name ?></span>
-                                  <?php if ( $i != $tags->length-1 ):?>
+                                  <?php if ( $i != count($tags)-1 ):?>
                                     <span class="splitter">/</span>
                                   <?php endif; ?>
                                 <?php endforeach; ?>
@@ -143,7 +144,7 @@
                     </a>
                   </div>
                 <?php endif; ?>
-                <?php if (!empty(get_next_post())): ?>
+                <?php if (!empty(get_next_post()->ID)): ?>
                   <?php
                     $id = get_next_post()->ID;
                     if (has_post_thumbnail('', $id)){
@@ -170,8 +171,9 @@
                               <?php if (has_tag('', $id)): ?>
                                 <?php $tags = get_the_tags($id);?>
                                 <?php foreach($tags as $i => $t): ?>
+                                  <?php if ($i > 2){ break; } ?>
                                   <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name ?></span>
-                                  <?php if ( $i != $tags->length-1 ):?>
+                                  <?php if ( $i != count($tags)-1 ):?>
                                     <span class="splitter">/</span>
                                   <?php endif; ?>
                                 <?php endforeach; ?>

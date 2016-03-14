@@ -9,7 +9,7 @@
       <a class="mdl-navigation__link" href="/wp/">Top</a>
       <a class="mdl-navigation__link" href="/wp/profile">About</a>
       <a class="mdl-navigation__link" href="/wp/contact">Contact</a>
-      <a class="mdl-navigation__link" href="https://github.com/vsanna">Github</a>
+      <a target="_blank" class="mdl-navigation__link" href="https://github.com/vsanna">Github</a>
       <a class="mdl-navigation__link js-toggle-menu-container-bottom toggle-menu-container-bottom" href="#"><i class="material-icons">close</i></a>
     </nav>
   </div>

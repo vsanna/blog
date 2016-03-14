@@ -73,7 +73,7 @@
                               <?php $tags = get_the_tags();?>
                               <?php foreach($tags as $i => $t): ?>
                                 <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name; ?></span>
-                                <?php if ( $i != $tags->length-1 ):?>
+                                <?php if ( $i != count($tags)-1 ):?>
                                   <span class="splitter">/</span>
                                 <?php endif; ?>
                               <?php endforeach; ?>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="mdl-grid">
               <?php else: ?>
-                <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
                   <a href="<?php the_permalink(); ?>" class="card mdl-shadow--4dp">
                     <div class="mdl-card__media" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
                       <div class="mdl-card__media--inner">
@@ -99,8 +99,9 @@
                           <?php if (has_tag()): ?>
                             <?php $tags = get_the_tags();?>
                             <?php foreach($tags as $i => $t): ?>
+                            <?php if ($i > 2){ break; } ?>
                               <span class="tag tag--sm tag--transparent-white tag--no-border tag--no-hover"><?php echo $t->name; ?></span>
-                              <?php if ( $i != $tags->length-1 ):?>
+                              <?php if ( $i != count($tags)-1 ):?>
                                 <span class="splitter">/</span>
                               <?php endif; ?>
                             <?php endforeach; ?>

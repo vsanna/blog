@@ -56,10 +56,10 @@ ul.mdl-list.comments.parent {
   <span class="article__section--title">Comment here!</span>
   <span class="article__section--line"></span>
   <?php if(have_comments()): // コメントがあったら ?>
-    <span class="article__section--text show-comments"><?php echo count(get_comments()); ?>件のコメント<i class="material-icons">keyboard_arrow_down</i></span>
+    <span class="article__section--text show-comments"><?php echo count(get_approved_comments(get_the_ID())); ?>件のコメント<i class="material-icons">keyboard_arrow_down</i></span>
     <div class="comments_area">
       <ul class="mdl-list comments parent">
-        <?php foreach(get_comments() as $c): ?>
+        <?php foreach(get_approved_comments(get_the_ID()) as $c): ?>
           <?php echo show_comments($c, true); ?>
         <?php endforeach; ?>
       </ul>

@@ -26,9 +26,13 @@
 - [x] 直近の記事
 - [x] hatena人気記事
 - [x] sample画像の入集
-  - [ ] 記事のbigbox
-  - [ ] indexのbigbox
-- [ ] indexのbigbox無い時のheader
+  - [x] 記事のbigbox
+  - [x] indexのbigbox
+- [x] indexのbigbox無い時のheader
 - [x] page.phpをどうするか。singleと共有でいいのか
 - [x] 各種日付のformat
 - [x] snsボタンの設置
+- [ ] 関連記事
+- [ ] デザインの崩れ対応
+  - [ ] snsボタン
+  - [ ] コメント無いとき

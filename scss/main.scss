@@ -105,6 +105,11 @@ $width-mobile: "(max-width: 449px)";
   .drawer--section-title {
       font-size: 0.8rem;
       padding: 8px 16px;
+      &.with-border {
+          border-top: 1px solid #EBEBEB;
+          border-bottom: 1px solid #EBEBEB;
+          margin-top: 16px;
+      }
   }
 
   // indexのdrawerのみ
@@ -960,6 +965,7 @@ footer {
       }
       h2 {
           font-size: 1.8rem;
+          line-height: 3rem;
           @media #{$width-tablet}{
             font-size: 1.6rem;
           }
@@ -1124,7 +1130,7 @@ footer {
           width: calc(100% + 1000px);
           margin: 12px -500px;
           margin-bottom: 12px;
-          padding: 8px 0 24px;
+          padding: 16px 0;
           background-color: rgb(11, 37, 47);
           color: #fff;
           font-family: 'Source Code Pro';
@@ -1149,7 +1155,7 @@ footer {
                   width: initial;
                   display: inline-block;
                   position: absolute;
-                  top: -16px;
+                  top: -24px;
                   left: 24px;
                   background-color: #C11111;
                   color: white;
@@ -1180,12 +1186,17 @@ footer {
             position: absolute;
             top: 9px;
             right: 0;
-            width: calc(100% - 148px - 45px);
-            margin-right: 52px;
+            width: calc(100% - 148px - 50px);
+            margin-right: 60px;
         }
         .article__section--text {
             float: right;
             display: inline-block;
+            .material-icons {
+                font-size: 1.2rem;
+                vertical-align: sub;
+                margin-right: 4px;
+            }
         }
     }
     .article__section.sns-area {
@@ -1251,7 +1262,7 @@ footer {
         transform: rotateX(0);
         transition: transform 0.3s;
     }
-    &.open .material-icons {
+    &.open .material-icons.arrow {
       transform: rotateX(-180deg);
       transition: all 0.3s;
     }

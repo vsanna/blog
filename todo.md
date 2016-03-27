@@ -34,5 +34,12 @@
 - [x] snsボタンの設置
 - [ ] 関連記事
 - [ ] デザインの崩れ対応
-  - [ ] snsボタン
-  - [ ] コメント無いとき
+  - [x] snsボタン
+  - [x] コメント無いとき
+  - [x] コメント数の表示
+  - [ ] mobileでのfont
+  - [ ] 各所 titleのfont-weight
+  - [x] pagerの数
+
+
+singleとcommentが編集有り

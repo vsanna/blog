@@ -7,9 +7,8 @@ add_theme_support( 'custom-background' );
 add_theme_support( 'post-thumbnails' );
 
 add_theme_support( 'automatic-feed-links' );
-
-add_theme_support( 'custom-header',$args);
-
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 
 
 add_filter( 'show_admin_bar', '__return_false' );
@@ -120,7 +119,7 @@ $output = <<< HTML
 <div class="code-wrapper">
   <div class="code-inner">
     <span class="lang-label">{$lang}</span>
-    <pre><code class="{$content}">{$content}</code></pre>
+    <pre><code class="{$lang}">{$content}</code></pre>
   </div>
 </div>
 HTML;
@@ -128,6 +127,20 @@ HTML;
   return $output;
 }
 add_shortcode('pre','shortcode_pre');
+
+function shortcode_pre_inline($args, $content){
+  $lang = $args[0];
+
+$output = <<< HTML
+<pre class="inline">
+  <code class="{$lang}">{$content}</code>
+</pre>
+HTML;
+
+  return $output;
+}
+add_shortcode('pre_inline','shortcode_pre_inline');
+
 
 function show_comments($root_comment, $is_outer){
 

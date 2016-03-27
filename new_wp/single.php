@@ -32,6 +32,17 @@
   }
   </style>
 
+  <?php
+  // 汎用的に使うもの
+  $background_imgs = array(
+    "bgd-img1.jpg",
+    "bgd-img2.jpg",
+    "bgd-img3.jpg",
+    "bgd-img4.jpg",
+    "bgd-img5.jpg",
+  );
+  ?>
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header show">
     <header class="mdl-layout__header custom">
       <!-- drawer_toggle_buttonのみ -->
@@ -48,15 +59,8 @@
                 $thumbnail_id = get_post_thumbnail_id();
                 $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
               } else {
-                $background_imgs = array(
-                  "bgd-img1.jpg",
-                  "bgd-img2.jpg",
-                  "bgd-img3.jpg",
-                  "bgd-img4.jpg",
-                  "bgd-img5.jpg",
-                );
-                $background_img = $background_imgs[array_rand($background_imgs, 1)];
-                $url = get_template_directory_uri()."/images/".$background_img; // default
+                $background_img_key = $background_imgs[array_rand($background_imgs, 1)];
+                $url = get_template_directory_uri()."/images/".$background_img_key; // default
               }
             ?>
               <div class="bigbox mdl-shadow--3dp" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?php echo $url; ?>') center / cover">
@@ -110,7 +114,8 @@
                       $thumbnail_id = get_post_thumbnail_id($id);
                       $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
                     } else {
-                      $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                      $background_img_key = $background_imgs[array_rand($background_imgs, 1)];
+                      $url = get_template_directory_uri()."/images/".$background_img_key; // default
                     }
                   ?>
                   <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet before">
@@ -151,7 +156,8 @@
                       $thumbnail_id = get_post_thumbnail_id($id);
                       $url = wp_get_attachment_image_src( $thumbnail_id, 'large' )[0];
                     } else {
-                      $url = "https://www.getmdl.io/templates/blog/images/road.jpg"; // default
+                      $background_img_key = $background_imgs[array_rand($background_imgs, 1)];
+                      $url = get_template_directory_uri()."/images/".$background_img_key; // default
                     }
                   ?>
                   <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet after">

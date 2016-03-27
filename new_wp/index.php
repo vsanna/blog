@@ -132,7 +132,7 @@
                     'base' => $paginate_base,
                     'format' => $paginate_format,
                     'total' => $wp_query->max_num_pages,
-                    'mid_size' => 4,
+                    'mid_size' => 2,
                     'current' => ($paged ? $paged : 1),
                     'prev_text' => '<i class="material-icons">chevron_left</i>',
                     'next_text' => '<i class="material-icons">chevron_right</i>',

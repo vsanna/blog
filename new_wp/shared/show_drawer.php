@@ -27,8 +27,8 @@
       </form>
     </dev>
   </div>
-  <span class="drawer--section-title">最近の記事</span>
-  <div class="with-image mdl-navigation">
+  <span class="drawer--section-title with-border">最近の記事</span>
+  <div class="mdl-navigation">
     <?php $args = array(
     	'posts_per_page'   => 5,
     	'offset'           => 0,
@@ -49,34 +49,16 @@
       );
       $posts_array = get_posts( $args );
     ?>
-    <?php
-    $background_imgs = array(
-      "bgd-img1.jpg",
-      "bgd-img2.jpg",
-      "bgd-img3.jpg",
-      "bgd-img4.jpg",
-      "bgd-img5.jpg",
-    );
-    $background_img = $background_imgs[array_rand($background_imgs, 1)];
-    $default_url = get_template_directory_uri()."/images/".$background_img; // default
-    ?>
     <?php foreach ($posts_array as $p): ?>
       <?php
-        // var_dump($p)
-          $post_id = $p->ID;
+        $post_id = $p->ID;
         $post_title = $p->post_title;
         $post_link = $p->guid;
-        if (has_post_thumbnail('', $post_id)){
-          $thumbnail_id = get_post_thumbnail_id($post_id);
-          $url = wp_get_attachment_image_src( $thumbnail_id, 'small' )[0];
-        } else {
-          $url = $default_url;
-        }
       ?>
-        <a class="mdl-navigation__link" href="<?= $post_link ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('<?= $url ?>') center / cover"><?= $post_title ?></a>
+        <a class="mdl-navigation__link" href="<?= $post_link ?>"><?= $post_title ?></a>
     <?php endforeach; ?>
   </div>
-  <span class="drawer--section-title">読まれている記事</span>
+  <span class="drawer--section-title with-border">読まれている記事</span>
   <div class="mdl-navigation">
     <!-- HTML : popular_entries -->
     <!-- 人気記事を表示する -->

@@ -3,3 +3,8 @@ vendor/highlight
 js/
 css/
 *.zip
+.npm-debug.log
+todo.md
+css3.memo.md
+vsanna-thena-v3
+

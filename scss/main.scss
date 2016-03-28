@@ -1165,7 +1165,14 @@ footer {
           }
 
       }
-
+      pre.inline {
+        display: inline-flex;
+        margin: 0 0 5px 0;
+          code {
+              border-radius: 3px;
+              display: inline;
+          }
+      }
   }
   // article--footer下部関連情報
   .article__footer {

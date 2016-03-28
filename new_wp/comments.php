@@ -64,6 +64,7 @@ ul.mdl-list.comments.parent {
     <div class="comments_area">
       <ul class="mdl-list comments parent">
         <?php foreach(get_approved_comments(get_the_ID()) as $c): ?>
+          <?php var_dump($c); ?>
           <?php echo show_comments($c, true); ?>
         <?php endforeach; ?>
       </ul>

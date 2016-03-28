@@ -973,6 +973,15 @@ footer {
         letter-spacing: 1px;
         font-size: 14px;
         font-size: 0.9rem; }
+  .article .article__body pre.inline {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0 0 5px 0; }
+    .article .article__body pre.inline code {
+      border-radius: 3px;
+      display: inline; }
 
 .article .article__footer .article__section {
   position: relative;

@@ -19,8 +19,11 @@ body, html {
     margin: 0;
     font-family: YuGothic, sans-serif;
     box-sizing: border-box;
-    background-color: rgba(0,0,0,0.03);
+    background-color: #fafafa;
     color: #222;
+}
+body {
+  -webkit-text-size-adjust: 100%;
 }
 
 // variables
@@ -785,18 +788,25 @@ footer {
     }
   }
   @media #{$width-tablet}{
-    .title {
-      font-size: 1.3rem;
-    }
+    // .bigbox .title {
+    //   font-size: 1.3rem;
+    // }
   }
   @media #{$width-not-tablet}{
-    .bigbox .title {
-      font-size: 2rem;
-      max-width: 70%;
-    }
+    // .bigbox .title {
+    //   font-size: 2rem;
+    //   // max-width: 70%;
+    // }
     .bigbox-inner .bigbox-inner {
-      bottom: 50px !important;
+      // bottom: 50px !important;
     }
+  }
+
+  @media #{$width-wide}{
+    .bigbox .title { font-size: 2rem; }
+  }
+  @media #{$width-not-wide}{
+    .bigbox .title { font-size: 1.3rem; }
   }
 
   .related-title {

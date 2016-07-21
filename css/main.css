@@ -15,8 +15,11 @@ body, html {
   margin: 0;
   font-family: YuGothic, sans-serif;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #fafafa;
   color: #222; }
+
+body {
+  -webkit-text-size-adjust: 100%; }
 
 @media (max-width: 549px) {
   .hide-mobile {
@@ -651,16 +654,13 @@ footer {
   .mdl-layout.show .tags {
     margin-left: -6px; } }
 
-@media (max-width: 549px) {
-  .mdl-layout.show .title {
-    font-size: 1.3rem; } }
-
-@media (min-width: 550px) {
+@media (min-width: 700px) {
   .mdl-layout.show .bigbox .title {
-    font-size: 2rem;
-    max-width: 70%; }
-  .mdl-layout.show .bigbox-inner .bigbox-inner {
-    bottom: 50px !important; } }
+    font-size: 2rem; } }
+
+@media (max-width: 699px) {
+  .mdl-layout.show .bigbox .title {
+    font-size: 1.3rem; } }
 
 .mdl-layout.show .related-title {
   font-size: 22px;
